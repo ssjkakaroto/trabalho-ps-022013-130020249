@@ -1,0 +1,5 @@
+ - Identificador do módulo: Módulo 5 - INTERFACE COM OS USUÁRIOS
+ - Tempo estimado para desenvolvimento do módulo: 20 horas
+ - Tempo efetivamente gasto no desenvolvimento do módulo:
+ - Tamanho total estimado para o módulo: 1500 linhas
+ - Tamanho total efetivo do módulo:
