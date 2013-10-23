@@ -1,0 +1,5 @@
+ - Identificador do módulo: Módulo 4 - LÓGICA DO NEGÓCIO
+ - Tempo estimado para desenvolvimento do módulo: 40 horas
+ - Tempo efetivamente gasto no desenvolvimento do módulo:
+ - Tamanho total estimado para o módulo: 3000 linhas
+ - Tamanho total efetivo do módulo:
