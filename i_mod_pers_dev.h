@@ -7,11 +7,14 @@
 #define EXT_PDEV extern
 #endif
 
+#include "tabela_codigos.h"
 #include "i_estruturas.h"
 
-EXT_PDEV size_t cadastrar_desenvolvedor(const struct desenvolvedor *dev);
-EXT_PDEV size_t consultar_desenvolvedor(struct desenvolvedor *dev);
-EXT_PDEV size_t editar_desenvolvedor(struct desenvolvedor *dev);
-EXT_PDEV size_t remover_desenvolvedor(const char *email);
+EXT_PDEV int cad_desenvolvedor(const struct desenvolvedor *dev,
+                                     size_t posicao);
+EXT_PDEV int consultar_desenvolvedor(struct desenvolvedor *dev);
+EXT_PDEV int consultar_desenvolvedor_apagado(void);
+EXT_PDEV int editar_desenvolvedor(struct desenvolvedor *dev, size_t posicao);
+EXT_PDEV int remover_desenvolvedor(size_t posicao);
 
 #endif

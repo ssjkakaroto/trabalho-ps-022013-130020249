@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=4
 CompilerSettings=
-UnitCount=9
+UnitCount=12
 
 [VersionInfo]
 Major=1
@@ -132,6 +132,36 @@ BuildCmd=
 
 [Unit9]
 FileName=mod_pers_def.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit10]
+FileName=tabela_codigos.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit11]
+FileName=mod_log_neg.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit12]
+FileName=i_mod_log_neg.h
 CompileCpp=0
 Folder=
 Compile=1
