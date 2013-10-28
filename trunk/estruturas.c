@@ -1,8 +1,9 @@
 #define ESTRUTURAS_SERV
 
+#include "tabela_codigos.h"
 #include "i_estruturas.h"
 #include <stdio.h>
-#include <stdint.h>
+#include <stddef.h>
 #include <stdlib.h>
 
 
@@ -69,9 +70,9 @@ int spc_email_isvalid(const char *address)
 }
 */
 
-uint8_t verificar_email(const char *email)
+int verificar_email(const char *email)
 {
-	uint8_t count = 0;
+	size_t count = 0;
 	const char *c;
 	static char *rfc822_specials = "()<>@,;:\\\"[]";
 	

@@ -7,11 +7,12 @@
 #define EXT_PDEF extern
 #endif
 
+#include "tabela_codigos.h"
 #include "i_estruturas.h"
 
-EXT_PDEF size_t cadastrar_defeito(const struct defeito *dev);
-EXT_PDEF size_t consultar_defeito(struct defeito *dev);
-EXT_PDEF size_t editar_defeito(struct defeito *dev);
-EXT_PDEF size_t remover_defeito(const char *cod);
+EXT_PDEF int cadastrar_defeito(const struct defeito *dev);
+EXT_PDEF int consultar_defeito(struct defeito *dev);
+EXT_PDEF int editar_defeito(struct defeito *dev);
+EXT_PDEF int remover_defeito(const char *cod);
 
 #endif
