@@ -19,6 +19,7 @@
  * É lider de projeto: não = 0, sim = 1
  * É lider de produto: # de produtos que é lider (0 a 5)
  * É candidato a solução de defeito: # de produtos que é candidato (0 a 2)
+ * cand1 e cand2: strings de ids dos defeitos ao qual é candidato
  * Está solucionando defeito: # de produtos que está solucionando (0 a 1)
  * Foi excluido do cadastro: 1 = sim, 0 = não
  */
@@ -29,6 +30,8 @@ struct desenvolvedor {
 	size_t lid_proj;
 	size_t lid_prod;
 	size_t cand_def;
+	char   cand1[5];
+	char   cand2[5];
 	size_t sol_def;
 	size_t excluido;
 };
@@ -61,7 +64,7 @@ struct produto {
  * Data_abertura: DD-MM-AAAA
  * Data_fechamento: DD-MM-AAAA
  * Desenvolvedor solucionando: email(id)
- * Candidatos para solucionar: emails(ids)
+ * Candidatos para solucionar: emails(ids) REMOVER ESTE CAMPO
  * Foi excluido do cadastro: 1 = sim, 0 = não
  */
 struct defeito {
@@ -72,7 +75,7 @@ struct defeito {
 	char   dt_ab[11];
 	char   dt_fc[11];
 	char   des_sel[21];
-	char   *cands[21];
+	/* char   *cands[21]; */
 	size_t excluido;
 };
 

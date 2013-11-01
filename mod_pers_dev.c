@@ -8,14 +8,15 @@
 #include <stdlib.h>
 
 
-
 /**
- * Função para cadastrar um novo desenvolvedor
+ * Função para escrever um novo desenvolvedor em disco
  *
  * A função cadastra um novo desenvolvedor no arquivo 'cad_devs.bin', em
  * formato binário, na posição 'posicao'. Se 'posicao = 0' então o desenvolvedor
  * será gravado no final do arquivo.
  * Não há verificação se o desenvolvedor já existe no arquivo ou não.
+ *
+ * Valor de retorno:
  * Há o retorno do valor da função fwrite:
  * The total number of elements successfully written is returned.
  * If this number differs from the count parameter, a writing error prevented
@@ -25,7 +26,7 @@
  * indicator remains unchanged.
  * size_t is an unsigned integral type.
  */
-int cad_desenvolvedor(const struct desenvolvedor *dev, size_t posicao)
+int escrever_desenvolvedor(const struct desenvolvedor *dev, size_t posicao)
 {
 	FILE *output;
 	int ret;
@@ -52,6 +53,40 @@ int cad_desenvolvedor(const struct desenvolvedor *dev, size_t posicao)
 		return(ret);
 	}
 }
+
+
+/**
+ * Função exportada para cadastrar um desenvolvedor.
+ *
+ * Cadastra um desenvolvedor fazendo as verificações necessárias, de forma que
+ * seja gravado na posição correta do arquivo.
+ *
+ * Valor de retorno:
+ * Retorna o valor de retorno da função escrever_desenvolvedor. Se o
+ * desenvolvedor já existir, retorna ERROR_STRT_EXISTS.
+ */
+int cadastrar_desenvolvedor(const struct desenvolvedor *dev)
+{
+	int ret, verif, pos;
+	struct desenvolvedor devtmp;
+
+	devtmp = *dev;
+
+	verif = consultar_desenvolvedor(&devtmp);
+	if (verif < 0) {
+		ret = escrever_desenvolvedor(dev, 0);
+	} else if (verif == 0) {
+		pos = consultar_desenvolvedor_apagado();
+		if (pos >= 0)
+			ret = escrever_desenvolvedor(dev, pos);
+		else
+			return(ret);
+	} else {
+		return(ERROR_STRT_EXISTS);
+	}
+
+	return(ret);
+}
 	
 
 /**
@@ -61,6 +96,8 @@ int cad_desenvolvedor(const struct desenvolvedor *dev, size_t posicao)
  * preenchido.
  * Essa struct será preenchida com o restante dos dados caso o desenvolvedor
  * exista. Caso o desenvolvedor não exista, a struct não será alterada.
+ *
+ * Valor de retorno:
  * Há o retorno do valor da função fread:
  * The total number of elements successfully read is returned.
  * If this number differs from the count parameter, either a reading error
@@ -108,8 +145,14 @@ int consultar_desenvolvedor(struct desenvolvedor *dev)
 	return(ret);
 }
 
+
 /**
  * Função para achar o primeiro desenvolvedor apagado.
+ *
+ * Valor de retorno:
+ * Se houver um desenvolvedor apagado, será retornada a posição desse
+ * desenvolvedor. Se não houver nenhum apagado retornará 0. Se houver problema
+ * ao abrir o arquivo, retorna ERROR_FILE_ACCESS.
  */
 int consultar_desenvolvedor_apagado(void)
 {
@@ -122,14 +165,10 @@ int consultar_desenvolvedor_apagado(void)
 	if (input == NULL)
 		return(ERROR_FILE_ACCESS);
 
-	/*printf("%s\n", dev->email);*/
 	while (fread(&devcheck, sizeof(struct desenvolvedor), 1, input) == 1) {
-		/*printf("entrou no while\n");*/
 		ret++;
-		/*printf("%s\n", devcheck.email);*/
+		
 		if (devcheck.excluido == 1) {
-			/*printf("entrou no if\n");
-			*dev = devcheck;*/
 			fclose(input);
 			return(ret);
 		}
@@ -146,9 +185,11 @@ int consultar_desenvolvedor_apagado(void)
 /**
  * Funcao para remover um desenvolvedor
  *
- * A função apenas irá mudar o valor de excluido de 0 para 1, permitindo que o
- * espaço seja reutilizado para gravação de um novo desenvolvedor, por cima do
- * antigo.
+ * A função apenas irá mudar o valor de excluido de 0 para 1, do desenvolvedor
+ * na posição 'posicao', permitindo que o espaço seja reutilizado para gravação
+ * de um novo desenvolvedor, por cima do antigo.
+ *
+ * Valor de retorno:
  * Retorna 1 no caso de sucesso, ERROR_FILE_ACCESS no caso de erro ao
  * abrir o arquivo e um valor diferente de 2 no caso de outro erro.
  */
