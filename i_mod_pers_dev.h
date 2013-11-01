@@ -10,10 +10,10 @@
 #include "tabela_codigos.h"
 #include "i_estruturas.h"
 
-EXT_PDEV int cadastrar_desenvolvedor(const struct desenvolvedor *dev,
-                                     size_t posicao);
-EXT_PDEV int consultar_desenvolvedor(struct desenvolvedor *dev);
-EXT_PDEV int editar_desenvolvedor(struct desenvolvedor *dev, size_t posicao);
-EXT_PDEV int remover_desenvolvedor(size_t posicao);
+EXT_PDEV int register_developer(const struct desenvolvedor *dev);
+EXT_PDEV int read_developer(struct desenvolvedor *dev);
+EXT_PDEV int rewrite_developer(const struct desenvolvedor *dev);
+EXT_PDEV int delete_developer(struct desenvolvedor *dev);
+EXT_PDEV int count_developers(void);
 
 #endif

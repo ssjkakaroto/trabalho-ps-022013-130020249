@@ -10,9 +10,5 @@
 #include "tabela_codigos.h"
 #include "i_estruturas.h"
 
-EXT_PDEF int cadastrar_defeito(const struct defeito *dev);
-EXT_PDEF int consultar_defeito(struct defeito *dev);
-EXT_PDEF int editar_defeito(struct defeito *dev);
-EXT_PDEF int remover_defeito(const char *cod);
 
 #endif

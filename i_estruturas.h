@@ -15,7 +15,7 @@
  *
  * Nome: 15 caracteres (letra, espaço)
  * Email(id) 20 caracteres: RFC 822
- * Senha: 5 digitos (sem repetição)
+ * Senha: 5 digitos (sem repetição) APENAS NUMEROS
  * É lider de projeto: não = 0, sim = 1
  * É lider de produto: # de produtos que é lider (0 a 5)
  * É candidato a solução de defeito: # de produtos que é candidato (0 a 2)

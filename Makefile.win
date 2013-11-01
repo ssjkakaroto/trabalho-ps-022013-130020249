@@ -4,11 +4,11 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o estruturas.o mod_pers_dev.o mod_pers_prod.o mod_pers_def.o mod_log_neg.o
-LINKOBJ  = main.o estruturas.o mod_pers_dev.o mod_pers_prod.o mod_pers_def.o mod_log_neg.o
-LIBS     = -L"D:/Users/aaron/Desktop/Dev-Cpp/MinGW64/lib" -L"D:/Users/aaron/Desktop/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
-INCS     = -I"D:/Users/aaron/Desktop/Dev-Cpp/MinGW64/include" -I"D:/Users/aaron/Desktop/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
-CXXINCS  = -I"D:/Users/aaron/Desktop/Dev-Cpp/MinGW64/include" -I"D:/Users/aaron/Desktop/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Users/aaron/Desktop/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.7.1/include/c++"
+OBJ      = main.o estruturas.o mod_pers_dev.o mod_pers_prod.o mod_pers_def.o mod_log_neg.o mod_int_user.o
+LINKOBJ  = main.o estruturas.o mod_pers_dev.o mod_pers_prod.o mod_pers_def.o mod_log_neg.o mod_int_user.o
+LIBS     = -L"E:/Downloads/browser/Dev-Cpp/MinGW64/lib" -L"E:/Downloads/browser/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"E:/Downloads/browser/Dev-Cpp/MinGW64/include" -I"E:/Downloads/browser/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"E:/Downloads/browser/Dev-Cpp/MinGW64/include" -I"E:/Downloads/browser/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Downloads/browser/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.7.1/include/c++"
 BIN      = Trabalho_PS.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
@@ -41,3 +41,6 @@ mod_pers_def.o: mod_pers_def.c
 
 mod_log_neg.o: mod_log_neg.c
 	$(CC) -c mod_log_neg.c -o mod_log_neg.o $(CFLAGS)
+
+mod_int_user.o: mod_int_user.c
+	$(CC) -c mod_int_user.c -o mod_int_user.o $(CFLAGS)

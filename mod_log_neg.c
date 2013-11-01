@@ -9,16 +9,45 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 
+int check_login(struct desenvolvedor *dev)
+{
+	int verif, chkpass;
+	struct desenvolvedor devchk;
+	
+	devchk = *dev;
+	
+	verif = read_developer(&devchk);
+	if (verif > 0) {
+		chkpass = strcmp(devchk.senha, dev->senha);
+		if (chkpass == 0)
+			return(SUCCESS);
+		else
+			return(WRONG_PASS);
+	} else {
+		return(verif);
+	}
+}
 
+int register_new_developer(const struct desenvolvedor *dev)
+{
+	return(register_developer(dev));
+}
 
+int number_of_developers(void)
+{
+	return(count_developers());
+}
 
-int retorna_desenvolvedor(struct desenvolvedor *dev)
+int load_developer(struct desenvolvedor *dev)
 {
 	int ret;
 	
-	ret = consultar_desenvolvedor(dev);
-	
-	return(ret);
+	ret = read_developer(dev);
+	if (ret > 0)
+		return SUCCESS;
+	else
+		return ret;
 }

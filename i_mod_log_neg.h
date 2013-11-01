@@ -9,6 +9,9 @@
 
 #include "tabela_codigos.h"
 
-int cadastrar_desenvolvedor(const struct desenvolvedor *dev);
+int check_login(struct desenvolvedor *dev);
+int register_new_developer(const struct desenvolvedor *dev);
+int number_of_developers(void);
+int load_developer(struct desenvolvedor *dev);
 
 #endif
