@@ -1,4 +1,4 @@
-#include "tabela_codigos.h"
+/*#include "tabela_codigos.h"
 #include "i_estruturas.h"
 #include "i_mod_pers_dev.h"
 #include "i_mod_log_neg.h"
@@ -11,6 +11,7 @@ void imprimir_dev(struct desenvolvedor dev);
 
 int main(void)
 {
+
 	char test[] = "Hello world!";
 	size_t a;
 	int retorno;
@@ -58,6 +59,7 @@ int main(void)
 	imprimir_dev(otherdev1);
 	
 	a = verificar_email(test);
+
 	
 	return 0;
 }
@@ -68,4 +70,4 @@ void imprimir_dev(struct desenvolvedor dev)
 	printf("%s\n", dev.email);
 	printf("%s\n", dev.senha);
 	printf("%d\n\n", dev.excluido);
-}
+}*/
