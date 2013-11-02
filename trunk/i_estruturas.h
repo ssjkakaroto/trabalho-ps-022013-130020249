@@ -24,9 +24,9 @@
  * Foi excluido do cadastro: 1 = sim, 0 = não
  */
 struct desenvolvedor {
-	char   nome[16];
-	char   email[21];
-	char   senha[6];
+	char   nome[NAME_SIZE];
+	char   email[EMAIL_SIZE];
+	char   senha[PASS_SIZE];
 	size_t lid_proj;
 	size_t lid_prod;
 	size_t cand_def;
@@ -46,10 +46,10 @@ struct desenvolvedor {
  * Foi excluido do cadastro: 1 = sim, 0 = não
  */
 struct produto {
-	char   nome[16];
+	char   nome[NAME_SIZE];
 	char   cod[5];
 	char   versao[6];
-	char   lider[21];
+	char   lider[EMAIL_SIZE];
 	size_t excluido;
 };
 
@@ -74,11 +74,14 @@ struct defeito {
 	size_t votos;
 	char   dt_ab[11];
 	char   dt_fc[11];
-	char   des_sel[21];
+	char   des_sel[NAME_SIZE];
 	/* char   *cands[21]; */
 	size_t excluido;
 };
 
+
+EXT_STRT void get_string(char *str, size_t size);
+EXT_STRT void get_password(char *pass, size_t size);
 EXT_STRT int verificar_email(const char *email);
 
 #endif

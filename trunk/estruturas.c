@@ -6,6 +6,53 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+/**
+ * Função auxiliar para capturar strings, que recebe a string e seu tamanho.
+ * O último caracter será sempre '\0', por isso o tamanho máximo da string é
+ * (size - 1).
+ */
+void get_string(char *str, size_t size)
+{
+	size_t i;
+
+	str[size - 1] = '\0'; /* Para garantir que não vai dar problema na struct */
+	for (i = 0; i < (size - 1); i++) {
+		str[i] = getchar();
+
+		if (str[i] == '\n') {
+			str[i] = '\0';
+			break;
+		}
+	}
+}
+
+
+/**
+ * Função auxiliar para capturar senhas, que recebe a string da senha e o
+ * tamanho da senha.
+ * O último caracter será sempre '\0', por isso o tamanho máximo da senha é
+ * (size - 1)
+ * Não da echo dos caracteres e termina automaticamente quando chega no tamanho
+ * (size - 1).
+ */
+void get_password(char *pass, size_t size)
+{
+	size_t i;
+
+	pass[size - 1] = '\0';
+	for (i = 0; i < (size - 1); i++) {
+		pass[i] = getch();
+
+		if (pass[i] == '\n') {
+			pass[i] = '\0';
+			break;
+		}
+	}
+}
+
+
+
+
 
 /**
  * RFC 822 defines the syntax for email addresses. Unfortunately, the syntax is
