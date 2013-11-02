@@ -13,5 +13,7 @@ int check_login(struct desenvolvedor *dev);
 int register_new_developer(const struct desenvolvedor *dev);
 int number_of_developers(void);
 int load_developer(struct desenvolvedor *dev);
+int overwrite_developer(const struct desenvolvedor *dev);
+int remove_developer(struct desenvolvedor *dev);
 
 #endif

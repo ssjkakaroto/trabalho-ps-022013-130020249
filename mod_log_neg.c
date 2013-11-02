@@ -31,15 +31,18 @@ int check_login(struct desenvolvedor *dev)
 	}
 }
 
+
 int register_new_developer(const struct desenvolvedor *dev)
 {
 	return(register_developer(dev));
 }
 
+
 int number_of_developers(void)
 {
 	return(count_developers());
 }
+
 
 int load_developer(struct desenvolvedor *dev)
 {
@@ -50,4 +53,15 @@ int load_developer(struct desenvolvedor *dev)
 		return SUCCESS;
 	else
 		return ret;
+}
+
+int overwrite_developer(const struct desenvolvedor *dev)
+{
+	return(rewrite_developer(dev));
+}
+
+
+int remove_developer(struct desenvolvedor *dev)
+{
+	return(delete_developer(dev));
 }
