@@ -5,6 +5,7 @@
 #define PASS_SIZE             6
 #define NAME_SIZE             16
 #define CODE_SIZE             5
+#define VERSION_SIZE          6
 #define SUCCESS               1
 #define FALSE                 0
 #define ERROR                -1

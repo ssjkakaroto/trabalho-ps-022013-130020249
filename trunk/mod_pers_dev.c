@@ -63,7 +63,8 @@ int write_developer(const struct desenvolvedor *dev, size_t posicao)
  *
  * Valor de retorno:
  * Retorna o valor de retorno da função write_developer. Se o
- * desenvolvedor já existir, retorna ELEMENT_EXISTS.
+ * desenvolvedor já existir, retorna ELEMENT_EXISTS. Se houver erro na função
+ * read_developer_deleted, retornará o erro dela.
  */
 int register_developer(const struct desenvolvedor *dev)
 {
@@ -74,13 +75,21 @@ int register_developer(const struct desenvolvedor *dev)
 
 	verif = read_developer(&devtmp);
 	if (verif < 0) {
-		ret = write_developer(dev, 0);
+		if (verif == ELEMENT_NOT_EXIST) {
+			pos = read_developer_deleted();
+			if (pos >= 0)
+				ret = write_developer(dev, pos);
+			else
+				return(pos);
+		} else {
+			ret = write_developer(dev, 0);
+		}
 	} else if (verif == 0) {
 		pos = read_developer_deleted();
 		if (pos >= 0)
 			ret = write_developer(dev, pos);
 		else
-			return(ret);
+			return(pos);
 	} else {
 		return(ELEMENT_EXISTS);
 	}

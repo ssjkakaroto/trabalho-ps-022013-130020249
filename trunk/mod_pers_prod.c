@@ -165,13 +165,21 @@ int register_product(const struct produto *prod)
 
 	verif = read_product(&prodtmp);
 	if (verif < 0) {
-		ret = write_product(prod, 0);
+		if (verif == ELEMENT_NOT_EXIST) {
+			pos = read_product_deleted();
+			if (pos >= 0)
+				ret = write_product(prod, pos);
+			else
+				return(pos);
+		} else {
+			ret = write_product(prod, 0);
+		}
 	} else if (verif == 0) {
 		pos = read_product_deleted();
 		if (pos >= 0)
 			ret = write_product(prod, pos);
 		else
-			return(ret);
+			return(pos);
 	} else {
 		return(ELEMENT_EXISTS);
 	}

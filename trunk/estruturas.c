@@ -5,24 +5,25 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * Função auxiliar para capturar strings, que recebe a string e seu tamanho.
- * O último caracter será sempre '\0', por isso o tamanho máximo da string é
- * (size - 1).
+ * O último caracter será sempre '\0'.
  */
 void get_string(char *str, size_t size)
 {
-	size_t i;
+	char lixo[16];
 
-	str[size - 1] = '\0'; /* Para garantir que não vai dar problema na struct */
-	for (i = 0; i < (size - 1); i++) {
-		str[i] = getchar();
+	fgets(str, size, stdin);
 
-		if (str[i] == '\n') {
-			str[i] = '\0';
-			break;
-		}
+	/* Limpa o buffer do stdin, caso necessário */
+    if (str[strlen(str)-1] != '\n') {
+		do {
+			fgets(lixo, 16, stdin);
+		} while (lixo[strlen(lixo)-1] != '\n');
+	} else {
+		str[strlen(str)-1] = '\0';
 	}
 }
 

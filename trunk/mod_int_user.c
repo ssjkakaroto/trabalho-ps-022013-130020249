@@ -121,12 +121,13 @@ void print_new_developer_registration(void)
 	 * NESTA FUN플O QUE DEVEM SER FEITAS AS VERIFICA합ES DE FORMATO
 	 */
 	
+	printf("Cadastro de novo desenvolvedor.\n\n");
 	
 	printf("Informe o email: ");
 	get_string(dev.email, EMAIL_SIZE);
 	
 	printf("Informe o nome: ");
-	get_string(dev.nome, 16);
+	get_string(dev.nome, NAME_SIZE);
 	
 	/* printf("%d\n", number_of_developers()); */
 	
@@ -183,52 +184,28 @@ void print_new_product_registration(void)
 	 * NESTA FUN플O QUE DEVEM SER FEITAS AS VERIFICA합ES DE FORMATO
 	 */
 
+	printf("Cadastro de um novo produto.\n\n");
 
-	printf("Informe o email: ");
-	get_string(dev.email, EMAIL_SIZE);
+	printf("Informe o codigo: ");
+	get_string(prod.cod, CODE_SIZE);
 
 	printf("Informe o nome: ");
-	get_string(dev.nome, 16);
+	get_string(prod.nome, NAME_SIZE);
 
-	/* printf("%d\n", number_of_developers()); */
+	printf("Infome a versao: ");
+	get_string(prod.versao, VERSION_SIZE);
 
-	if (number_of_developers() == 0)
-		dev.lid_proj = 1;
+	for (i = 0; i < EMAIL_SIZE; i++) {
+		prod.lider[i] = '\0';
+	}
+
+	prod.excluido = 0;
+
+	verif = register_new_product(&prod);
+	if (verif == 1)
+		printf("\nProduto cadastrado com sucesso.\n");
 	else
-		dev.lid_proj = 0;
-
-	dev.lid_prod = 0;
-	dev.cand_def = 0;
-	dev.sol_def = 0;
-	dev.excluido = 0;
-
-	for (i = 0; i < 5; i++) {
-		dev.cand1[i] = '\0';
-		dev.cand2[i] = '\0';
-	}
-
-	i = 1;
-
-	do {
-		printf("Informe a senha: ");
-		get_password(dev.senha, 6);
-		printf("\nRepita a senha: ");
-		get_password(senha, 6);
-
-		if (strcmp(dev.senha, senha) != 0)
-			printf("\nSenha nao confere.\n");
-		else
-			i = 0;
-	} while (i == 1);
-
-	verif = register_new_developer(&dev);
-	if (verif == 1) {
-		printf("\nDesenvolvedor cadastrado com sucesso.\n");
-		login_screen();
-	}
-	else {
 		printf("\nFalar qual foi o erro\n");
-	}
 }
 
 
@@ -327,9 +304,9 @@ void print_common_menu(void)
 void print_project_leader_menu(void)
 {
 	printf("101) Cadastrar produto\n");
-	printf("101) Editar produto\n");
-	printf("102) Descontinuar produto\n");
-	printf("103) Indicar lider de produto\n");
+	printf("102) Editar produto\n");
+	printf("103) Descontinuar produto\n");
+	printf("104) Indicar lider de produto\n");
 	printf("666) Sair\n");
 }
 
@@ -389,8 +366,24 @@ void process_option(struct desenvolvedor *dev, size_t opcao, size_t perfil)
 		case 4:
   		case 5:
 		case 101:
+			if (perfil != 1)
+				printf("Voce nao possui perfil para esta opcao.\n");
+			else
+				load_option_101();
+			break;
   		case 102:
+			if (perfil != 1)
+				printf("Voce nao possui perfil para esta opcao.\n");
+			else
+				load_option_102();
+			break;
 		case 103:
+			if (perfil != 1)
+				printf("Voce nao possui perfil para esta opcao.\n");
+			else
+				load_option_103();
+			break;
+		case 104:
   		case 201:
 		case 202:
   		case 301:
@@ -418,7 +411,7 @@ void load_option_1(struct desenvolvedor *dev)
 
 	/* FAZER VERIFICACAO SE O NOME ESTA NA ESTRUTURA CORRETA */
 
-	printf("Confirma alterar o nome de\n%s\npara\n%s?\n", devtmp.nome,
+	printf("Confirma alterar o nome de %s\npara %s?\n", devtmp.nome,
            dev->nome);
 	printf("(S ou N): ");
 	c = tolower(getchar());
@@ -530,10 +523,167 @@ int load_option_3(struct desenvolvedor *dev)
 	return(ret);
 }
 
+
+void load_option_101(void)
+{
+	int ret;
+	
+	system("cls");
+	
+	print_new_product_registration();
+}
+
+
+void load_option_102(void)
+{
+	struct produto prod, prodtmp;
+	char c;
+	int check, opcao;
+
+	system("cls");
+	
+ 	printf("Alteracao de produto\n\n");
+	printf("Informe o codigo do produto: ");
+	get_string(prod.cod, CODE_SIZE);
+
+	/* FAZER VERIFICACAO SE O CODIGO ESTA NA ESTRUTURA CORRETA */
+	
+	check = load_product(&prod);
+	
+	if (check != SUCCESS) {
+		printf("EXPLICAR O ERRO");
+	} else {
+		prodtmp = prod;
+		
+		printf("\nProduto:\n");
+		print_product(&prod);
+		printf("\n");
+		printf("1) Alterar nome\n");
+		printf("2) Alterar versao\n");
+		printf("Outra opcao retorna ao menu anterior.\n");
+		printf("Opcao: ");
+		scanf("%d", &opcao);
+		getchar();
+		
+		switch (opcao) {
+		case 1:
+			printf("\nInforme o novo nome: ");
+			get_string(prod.nome, NAME_SIZE);
+			
+			/* FAZER CHECAGEM DE FORMATO */
+			
+			printf("Confirma alterar o nome de %s\npara %s?\n", prodtmp.nome,
+                   prod.nome);
+			printf("(S ou N): ");
+			c = tolower(getchar());
+			getchar();
+			
+			do {
+				switch (c) {
+				case 's':
+					check = overwrite_product(&prod);
+					if (check == 1)
+						printf("Nome alterado com sucesso.\n");
+					else
+						printf("Erro ao alterar nome\n");
+					break;
+				case 'n':
+					printf("Retornando ao menu principal\n");
+					break;
+				default:
+					printf("Opcao invalida. Informe S ou N.\n");
+				}
+
+			} while ((c != 's') && (c != 'n'));
+			
+			break;
+		case 2:
+			printf("\nInforme a nova versao: ");
+			get_string(prod.versao, VERSION_SIZE);
+			
+			/* FAZER CHECAGEM DE FORMATO */
+
+			printf("Confirma alterar a versao de\n%s para %s?\n", prodtmp.versao,
+                   prod.versao);
+			printf("(S ou N): ");
+			c = tolower(getchar());
+			getchar();
+
+			do {
+				switch (c) {
+				case 's':
+					check = overwrite_product(&prod);
+					if (check == 1)
+						printf("Nome alterado com sucesso.\n");
+					else
+						printf("Erro ao alterar nome\n");
+					break;
+				case 'n':
+					printf("Retornando ao menu principal\n");
+					break;
+				default:
+					printf("Opcao invalida. Informe S ou N.\n");
+				}
+
+			} while ((c != 's') && (c != 'n'));
+			
+			break;
+		default:
+			printf("\nRetornando ao menu anterior");
+		}
+	}
+}
+
+
+void load_option_103(void)
+{
+	
+	int ret, check, opcao;;
+	struct produto prod, prodtmp;
+	char c;
+
+	system("cls");
+
+ 	printf("Descontinuar produto\n\n");
+	printf("Informe o codigo do produto: ");
+	get_string(prod.cod, CODE_SIZE);
+
+	check = load_product(&prod);
+
+	if (check != SUCCESS) {
+		printf("EXPLICAR O ERRO");
+	} else {
+		check = remove_product(&prod);
+
+		switch (check) {
+		case ERROR_FILE_ACCESS:
+			printf("\nErro de acesso ao arquivo\n");
+			break;
+		case ELEMENT_NOT_EXIST:
+			printf("\nProduto inexistente\n");
+			break;
+		case SUCCESS:
+			printf("\nProduto removido com sucesso\n");
+			break;
+		default:
+			printf("\nErro\n");
+		}
+	}
+}
+
+
 void print_developer(const struct desenvolvedor *dev)
 {
 	printf("%s\n", dev->nome);
 	printf("%s\n", dev->email);
 	printf("%s\n", dev->senha);
 	printf("%d\n\n", dev->excluido);
+}
+
+void print_product(const struct produto *prod)
+{
+	printf("Cogido: %s\n",prod->cod);
+	printf("Nome: %s\n",prod->nome);
+	printf("Versao: %s\n",prod->versao);
+	printf("Lider: %s\n",prod->lider);
 }
