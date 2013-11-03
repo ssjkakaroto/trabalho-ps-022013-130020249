@@ -65,3 +65,34 @@ int remove_developer(struct desenvolvedor *dev)
 {
 	return(delete_developer(dev));
 }
+
+
+int register_new_product(const struct produto *prod)
+{
+	return(register_product(prod));
+}
+
+
+int load_product(struct produto *prod)
+{
+	int ret;
+
+	ret = read_product(prod);
+	if (ret > 0)
+		return SUCCESS;
+	else
+		return ret;
+}
+
+
+int overwrite_product(const struct produto *prod)
+{
+	return(rewrite_product(prod));
+}
+
+
+int remove_product(struct produto *prod)
+{
+	/* FALTA FAZER A BUSTA NO BANDO DE DADOS DE DEFEITOS, REMOVENDO TODOS OS DEFEITOS ASSOCIADOS COM O PRODUTO */
+	return(delete_product(prod));
+}

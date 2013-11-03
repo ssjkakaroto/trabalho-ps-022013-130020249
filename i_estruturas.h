@@ -47,8 +47,8 @@ struct desenvolvedor {
  */
 struct produto {
 	char   nome[NAME_SIZE];
-	char   cod[5];
-	char   versao[6];
+	char   cod[CODE_SIZE];
+	char   versao[VERSION_SIZE];
 	char   lider[EMAIL_SIZE];
 	size_t excluido;
 };
@@ -65,6 +65,7 @@ struct produto {
  * Data_fechamento: DD-MM-AAAA
  * Desenvolvedor solucionando: email(id)
  * Candidatos para solucionar: emails(ids) REMOVER ESTE CAMPO
+ * Produto ao qual o defeito esta associado: codigo(id)
  * Foi excluido do cadastro: 1 = sim, 0 = não
  */
 struct defeito {
@@ -75,6 +76,7 @@ struct defeito {
 	char   dt_ab[11];
 	char   dt_fc[11];
 	char   des_sel[NAME_SIZE];
+	char   prod[CODE_SIZE];
 	/* char   *cands[21]; */
 	size_t excluido;
 };
