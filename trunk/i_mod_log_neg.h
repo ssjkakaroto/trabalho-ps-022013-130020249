@@ -21,6 +21,7 @@ int register_new_product(const struct produto *prod);
 int load_product(struct produto *prod);
 int overwrite_product(const struct produto *prod);
 int remove_product(struct produto *prod);
+int assign_product_leader(char *dev_email, char *prod_cod);
 
 int register_new_defect(const struct defeito *bug);
 int load_defect(struct defeito *bug);

@@ -15,5 +15,6 @@
 #define ELEMENT_EXISTS       -3
 #define ELEMENT_NOT_EXIST    -4
 #define WRONG_PASS           -5
+#define TOO_MANY_PRODUCTS    -6
 
 #endif
