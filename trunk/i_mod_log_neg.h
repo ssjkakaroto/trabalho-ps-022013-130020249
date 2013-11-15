@@ -22,4 +22,8 @@ int load_product(struct produto *prod);
 int overwrite_product(const struct produto *prod);
 int remove_product(struct produto *prod);
 
+int register_new_defect(const struct defeito *bug);
+int load_defect(struct defeito *bug);
+int overwrite_defect(const struct defeito *bug);
+
 #endif

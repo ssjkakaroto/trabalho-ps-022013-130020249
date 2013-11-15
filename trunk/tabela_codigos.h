@@ -6,6 +6,8 @@
 #define NAME_SIZE             16
 #define CODE_SIZE             5
 #define VERSION_SIZE          6
+#define DESC_SIZE             31
+#define DATE_SIZE             11
 #define SUCCESS               1
 #define FALSE                 0
 #define ERROR                -1

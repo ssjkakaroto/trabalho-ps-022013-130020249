@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main(void) {
 	
@@ -195,9 +196,8 @@ void print_new_product_registration(void)
 	printf("Infome a versao: ");
 	get_string(prod.versao, VERSION_SIZE);
 
-	for (i = 0; i < EMAIL_SIZE; i++) {
+	for (i = 0; i < EMAIL_SIZE; i++)
 		prod.lider[i] = '\0';
-	}
 
 	prod.excluido = 0;
 
@@ -208,6 +208,51 @@ void print_new_product_registration(void)
 		printf("\nFalar qual foi o erro\n");
 }
 
+
+void print_new_defect_registration(void)
+{
+	struct defeito bug;
+	size_t i;
+	int verif;
+	time_t data_hora;
+	struct tm *data_str;
+	
+ 	system("cls");
+	
+	/*
+	 * NESTA FUNÇÃO QUE DEVEM SER FEITAS AS VERIFICAÇÕES DE FORMATO
+	 */
+
+	printf("Cadastro de um novo defeito.\n\n");
+
+	printf("Informe o codigo: ");
+	get_string(bug.cod, CODE_SIZE);
+
+	printf("Informe a descricao: ");
+	get_string(bug.desc, DESC_SIZE);
+
+	printf("Infome o codigo do produto ao qual o defeito esta associado: ");
+	get_string(bug.prod, CODE_SIZE);
+
+	bug.est = 1;
+	bug.votos = 0;
+	bug.excluido = 0;
+
+	time(&data_hora);
+	data_str = localtime(&data_hora);
+	strftime(bug.dt_ab, DATE_SIZE, "%d-%m-%Y", data_str);
+
+	for (i = 0; i < DATE_SIZE; i++)
+		bug.dt_fc[i] = '\0';
+	for (i = 0; i < EMAIL_SIZE; i++)
+		bug.des_sel[i] = '\0';
+
+	verif = register_new_defect(&bug);
+	if (verif == 1)
+		printf("\nProduto cadastrado com sucesso.\n");
+	else
+		printf("\nFalar qual foi o erro\n");
+}
 
 
 /**
@@ -307,6 +352,8 @@ void print_project_leader_menu(void)
 	printf("102) Editar produto\n");
 	printf("103) Descontinuar produto\n");
 	printf("104) Indicar lider de produto\n");
+	printf("201) Indicar desenvolvedor para solucionar defeito\n");
+	printf("202) Alterar status de defeito\n");
 	printf("666) Sair\n");
 }
 
@@ -364,7 +411,11 @@ void process_option(struct desenvolvedor *dev, size_t opcao, size_t perfil)
 				exit(0);
 			break;
 		case 4:
+			load_option_4();
+			break;
   		case 5:
+			load_option_5();
+			break;
 		case 101:
 			if (perfil != 1)
 				printf("Voce nao possui perfil para esta opcao.\n");
@@ -429,6 +480,7 @@ void load_option_1(struct desenvolvedor *dev)
 		case 'n':
 			strcpy(dev->nome, devtmp.nome);
 			printf("Retornando ao menu principal\n");
+			system("pause");
 			break;
 		default:
 			printf("Opcao invalida. Informe S ou N.\n");
@@ -491,6 +543,7 @@ void load_option_2(struct desenvolvedor *dev)
 			case 'n':
 				strcpy(dev->senha, devtmp.senha);
 				printf("Retornando ao menu principal\n");
+				system("pause");
 				break;
 			default:
 				printf("Opcao invalida. Informe S ou N.\n");
@@ -524,11 +577,62 @@ int load_option_3(struct desenvolvedor *dev)
 }
 
 
-void load_option_101(void)
+void load_option_4(void)
 {
-	int ret;
+	system("cls");
+
+	print_new_defect_registration();
+}
+
+
+void load_option_5(void)
+{
+	struct defeito bug;
+	int check;
+	char c;
 	
 	system("cls");
+
+ 	printf("Votar em defeito\n\n");
+	printf("Informe o codigo do defeito: ");
+	get_string(bug.cod, CODE_SIZE);
+	
+	check = load_defect(&bug);
+	
+	if (check != SUCCESS) {
+		printf("EXPLICAR O ERRO");
+	} else {
+		printf("Confirma o voto?\n");
+		printf("(S ou N): ");
+		c = tolower(getchar());
+		getchar();
+
+		do {
+			switch (c) {
+			case 's':
+				bug.votos++;
+				check = overwrite_defect(&bug);
+				if (check == 1)
+					printf("Voto registrado com sucesso.\n");
+					system("pause");
+				else
+					printf("Erro ao regsitrar voto\n");
+				break;
+			case 'n':
+				printf("Retornando ao menu principal\n");
+				break;
+			default:
+				printf("Opcao invalida. Informe S ou N.\n");
+			}
+
+		} while ((c != 's') && (c != 'n'));
+	}
+}
+
+
+void load_option_101(void)
+{
+ 	system("cls");
 	
 	print_new_product_registration();
 }
@@ -546,9 +650,7 @@ void load_option_102(void)
 	printf("Informe o codigo do produto: ");
 	get_string(prod.cod, CODE_SIZE);
 
-	/* FAZER VERIFICACAO SE O CODIGO ESTA NA ESTRUTURA CORRETA */
-	
-	check = load_product(&prod);
+ 	check = load_product(&prod);
 	
 	if (check != SUCCESS) {
 		printf("EXPLICAR O ERRO");
@@ -674,16 +776,39 @@ void load_option_103(void)
 
 void print_developer(const struct desenvolvedor *dev)
 {
-	printf("%s\n", dev->nome);
-	printf("%s\n", dev->email);
-	printf("%s\n", dev->senha);
-	printf("%d\n\n", dev->excluido);
+	printf("Nome: %s\n", dev->nome);
+	printf("Email: %s\n", dev->email);
+	printf("Senha: %s\n", dev->senha);
+	printf("Lider de projeto: %d\n", dev->lid_proj);
+	printf("Lider de produto: %d\n", dev->lid_prod);
+	printf("# de defeitos que eh candidato: %d\n", dev->cand_def);
+	printf("Defeito 1: %s\n", dev->cand1);
+	printf("Defeito 2: %s\n", dev->cand2);
+	printf("Numero de defeitos que esta solucionando: %d\n", dev->sol_def);
+	
+	system("pause");
 }
 
 void print_product(const struct produto *prod)
 {
-	printf("Cogido: %s\n",prod->cod);
-	printf("Nome: %s\n",prod->nome);
-	printf("Versao: %s\n",prod->versao);
-	printf("Lider: %s\n",prod->lider);
+	printf("Codigo: %s\n", prod->cod);
+	printf("Nome: %s\n", prod->nome);
+	printf("Versao: %s\n", prod->versao);
+	printf("Lider: %s\n", prod->lider);
+	
+	system("pause");
+}
+
+void print_defect(const struct defeito *bug)
+{
+	printf("Codigo: %s\n", bug->cod);
+	printf("Descricao: %s\n", bug->desc);
+	printf("Data de abertura: %s\n", bug->dt_ab);
+	printf("Data de fechamento: %s\n", bug->dt_fc);
+	printf("Desenvolvedor solucionado: %s\n", bug->des_sel);
+	printf("Produto associado: %s\n", bug->prod);
+	printf("Estado: %d\n", bug->est);
+	printf("Votos: %d\n", bug->votos);
+	
+	system("pause");
 }
