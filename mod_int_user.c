@@ -435,9 +435,28 @@ void process_option(struct desenvolvedor *dev, size_t opcao, size_t perfil)
 				load_option_103();
 			break;
 		case 104:
+			if (perfil != 1)
+				printf("Voce nao possui perfil para esta opcao.\n");
+			else
+				load_option_104();
+			break;
   		case 201:
 		case 202:
+			if ((perfil != 1) && (perfil != 2)) {
+				printf("Voce nao possui perfil para esta opcao.\n");
+				system("pause");
+			}
+			else {
+				load_option_202();
+			}
+			break;
   		case 301:
+  			if ((perfil != 3) && (dev->sol_def != 1)) {
+  				printf("Voce nao possui perfil para esta opcao.\n");
+				system("pause");
+  			} else {
+  				load_option_301();
+  			}
 		case 401:
 		case 666:
 			break;
@@ -446,7 +465,9 @@ void process_option(struct desenvolvedor *dev, size_t opcao, size_t perfil)
 	}
 }
 
-
+/**
+ * Opcao 1: alterar nome
+ */
 void load_option_1(struct desenvolvedor *dev)
 {
 	struct desenvolvedor devtmp;
@@ -490,6 +511,9 @@ void load_option_1(struct desenvolvedor *dev)
 }
 
 
+/**
+ * Opcao 2: alterar senha
+ */
 void load_option_2(struct desenvolvedor *dev)
 {
 	struct desenvolvedor devtmp;
@@ -553,6 +577,9 @@ void load_option_2(struct desenvolvedor *dev)
 }
 
 
+/**
+ * Opcao 3: apagar conta
+ */
 int load_option_3(struct desenvolvedor *dev)
 {
 	int ret;
@@ -577,14 +604,22 @@ int load_option_3(struct desenvolvedor *dev)
 }
 
 
+/**
+ * Opcao 4: cadastrar novo defeito
+ */
 void load_option_4(void)
 {
 	system("cls");
 
 	print_new_defect_registration();
+
+	system("pause");
 }
 
 
+/**
+ * Opcao 5: votar em defeito
+ */
 void load_option_5(void)
 {
 	struct defeito bug;
@@ -602,42 +637,59 @@ void load_option_5(void)
 	if (check != SUCCESS) {
 		printf("EXPLICAR O ERRO");
 	} else {
-		printf("Confirma o voto?\n");
-		printf("(S ou N): ");
-		c = tolower(getchar());
-		getchar();
+		print_defect(&bug);
+		if (bug.votos < 100) {
+			printf("Confirma o voto?\n");
+			printf("(S ou N): ");
+			c = tolower(getchar());
+			getchar();
 
-		do {
-			switch (c) {
-			case 's':
-				bug.votos++;
-				check = overwrite_defect(&bug);
-				if (check == 1)
-					printf("Voto registrado com sucesso.\n");
+			do {
+				switch (c) {
+				case 's':
+					bug.votos++;
+					check = overwrite_defect(&bug);
+					if (check == 1) {
+						printf("Voto registrado com sucesso.\n");
+						system("pause");
+					} else {
+						printf("Erro ao regsitrar voto\n");
+						system("pause");
+					}
+					break;
+				case 'n':
+					printf("Retornando ao menu principal\n");
 					system("pause");
-				else
-					printf("Erro ao regsitrar voto\n");
-				break;
-			case 'n':
-				printf("Retornando ao menu principal\n");
-				break;
-			default:
-				printf("Opcao invalida. Informe S ou N.\n");
-			}
+					break;
+				default:
+					printf("Opcao invalida. Informe S ou N.\n");
+				}
 
-		} while ((c != 's') && (c != 'n'));
+			} while ((c != 's') && (c != 'n'));
+		} else {
+  			printf("Numero máximo de votos atingido\n");
+			system("pause");
+		}
 	}
 }
 
 
+/**
+ * Opcao 101: cadastrar novo produto
+ */
 void load_option_101(void)
 {
  	system("cls");
 	
 	print_new_product_registration();
+	
+	system("pause");
 }
 
 
+/**
+ * Opcao 102: alterar produto
+ */
 void load_option_102(void)
 {
 	struct produto prod, prodtmp;
@@ -737,10 +789,13 @@ void load_option_102(void)
 }
 
 
+/**
+ * Opcao 103: descontinuar produto
+ */
 void load_option_103(void)
 {
 	
-	int ret, check, opcao;;
+	int check;
 	struct produto prod, prodtmp;
 	char c;
 
@@ -760,15 +815,163 @@ void load_option_103(void)
 		switch (check) {
 		case ERROR_FILE_ACCESS:
 			printf("\nErro de acesso ao arquivo\n");
+			system("pause");
 			break;
 		case ELEMENT_NOT_EXIST:
 			printf("\nProduto inexistente\n");
+			system("pause");
 			break;
 		case SUCCESS:
 			printf("\nProduto removido com sucesso\n");
+			system("pause");
 			break;
 		default:
 			printf("\nErro\n");
+			system("pause");
+		}
+	}
+}
+
+
+/**
+ * Opcao 104: designar lider de produto
+ */
+void load_option_104(void)
+{
+	int check;
+	char dev_email[EMAIL_SIZE], prod_cod[CODE_SIZE];
+	
+	system("cls");
+	
+	printf("Designar lider de produto\n\n");
+	printf("Informe o codigo do produto: ");
+	get_string(prod_cod, CODE_SIZE);
+	printf("Informe o email do desenvolvedor: ");
+	get_string(dev_email, EMAIL_SIZE);
+	
+	check = assign_product_leader(dev_email, prod_cod);
+	switch (check) {
+		case ERROR_FILE_ACCESS:
+			printf("\nErro de acesso ao arquivo\n");
+			system("pause");
+			break;
+		case ELEMENT_NOT_EXIST:
+			printf("\nProduto ou desenvolvedor inexistente\n");
+			system("pause");
+			break;
+		case SUCCESS:
+			printf("\nDesenvolvedor indicado com sucesso\n");
+			system("pause");
+			break;
+		default:
+			printf("\nErro\n");
+			system("pause");
+	}
+}
+
+
+/**
+ * Opcao 202: alterar estado de defeito
+ */
+void load_option_202(void)
+{
+	struct defeito bug;
+	int check, opcao;
+
+	system("cls");
+
+ 	printf("Alterar estado de defeito\n\n");
+	printf("Informe o codigo do defeito: ");
+	get_string(bug.cod, CODE_SIZE);
+
+	check = load_defect(&bug);
+
+	if (check != SUCCESS) {
+		printf("EXPLICAR O ERRO");
+	} else {
+		print_defect(&bug);
+		if (bug.est == 4) {
+			printf("Estados possiveis\n");
+			printf("4) Mantem o estado atual\n");
+			printf("5) Encerrado\n");
+			printf("6) Confirmado\n");
+			printf("Opcao (9 retorna ao menu principal): ");
+			scanf("%d", &opcao);
+
+			switch (opcao) {
+			case 5: case 6:
+				bug.est = opcao;
+				check = overwrite_defect(&bug);
+				if (check == 1) {
+					printf("Estado alterado com sucesso.\n");
+					system("pause");
+				} else {
+					printf("Erro ao alterar estado\n");
+					system("pause");
+				}
+				break;
+			default:
+				printf("Retornando...\n");
+				system("pause");
+			}
+
+		} else {
+  			printf("O estado atual não permite alteracao\n");
+			system("pause");
+		}
+	}
+}
+
+
+/**
+ * Opcao 301: alterar estado de defeito
+ */
+void load_option_301(void)
+{
+	struct defeito bug;
+	int check, opcao;
+
+	system("cls");
+
+ 	printf("Alterar estado de defeito\n\n");
+	printf("Informe o codigo do defeito: ");
+	get_string(bug.cod, CODE_SIZE);
+
+	check = load_defect(&bug);
+
+	if (check != SUCCESS) {
+		printf("EXPLICAR O ERRO");
+	} else {
+		print_defect(&bug);
+		if (bug.est <= 4) {
+			printf("Estados possiveis\n");
+			printf("1) Novo\n");
+			printf("2) Confirmado\n");
+			printf("3) Em reparo\n");
+			printf("4) Reparado\n");
+			printf("Opcao (9 retorna ao menu principal): ");
+			scanf("%d", &opcao);
+			
+			switch (opcao) {
+			case 1: case 2: case 3: case 4:
+				bug.est = opcao;
+				check = overwrite_defect(&bug);
+				if (check == 1) {
+					printf("Estado alterado com sucesso.\n");
+					system("pause");
+				} else {
+					printf("Erro ao alterar estado\n");
+					system("pause");
+				}
+				break;
+			default:
+				printf("Retornando...\n");
+				system("pause");
+			}
+
+		} else {
+  			printf("O estado atual não permite alteracao\n");
+			system("pause");
 		}
 	}
 }
@@ -785,8 +988,6 @@ void print_developer(const struct desenvolvedor *dev)
 	printf("Defeito 1: %s\n", dev->cand1);
 	printf("Defeito 2: %s\n", dev->cand2);
 	printf("Numero de defeitos que esta solucionando: %d\n", dev->sol_def);
-	
-	system("pause");
 }
 
 void print_product(const struct produto *prod)
@@ -795,8 +996,6 @@ void print_product(const struct produto *prod)
 	printf("Nome: %s\n", prod->nome);
 	printf("Versao: %s\n", prod->versao);
 	printf("Lider: %s\n", prod->lider);
-	
-	system("pause");
 }
 
 void print_defect(const struct defeito *bug)
@@ -805,10 +1004,8 @@ void print_defect(const struct defeito *bug)
 	printf("Descricao: %s\n", bug->desc);
 	printf("Data de abertura: %s\n", bug->dt_ab);
 	printf("Data de fechamento: %s\n", bug->dt_fc);
-	printf("Desenvolvedor solucionado: %s\n", bug->des_sel);
+	printf("Desenvolvedor solucionando: %s\n", bug->des_sel);
 	printf("Produto associado: %s\n", bug->prod);
 	printf("Estado: %d\n", bug->est);
 	printf("Votos: %d\n", bug->votos);
-	
-	system("pause");
 }

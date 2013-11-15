@@ -151,6 +151,39 @@ int remove_product(struct produto *prod)
 }
 
 
+/**
+ * Função que vai indicar um líder de produto
+ */
+int assign_product_leader(char *dev_email, char *prod_cod)
+{
+	struct desenvolvedor dev;
+	struct produto prod;
+	int ret;
+	
+	strcpy(dev.email, dev_email);
+	strcpy(prod.cod, prod_cod);
+	
+	ret = read_product(&prod);
+	if (ret > 0) {
+		ret = read_developer(&dev);
+		if (ret > 0) {
+			if (dev.lid_prod < 5) {
+				dev.lid_prod++;
+				ret = rewrite_developer(&dev);
+				if (ret > 0) {
+					strcpy(prod.lider, dev.email);
+					ret = rewrite_product(&prod);
+				}
+			} else {
+				return(TOO_MANY_PRODUCTS);
+			}
+   		}
+	}
+	
+	return(ret);
+}
+
+
 /*
  *************************************
  * FUNÇÕES RELACIONADAS COM DEFEITOS *

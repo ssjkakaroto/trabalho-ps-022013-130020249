@@ -59,7 +59,7 @@ struct produto {
  * Codigo(id): 4 letras
  * Descricao: 30 caracteres
  * Estado: 1 - Novo, 2 - Confirmado, 3 - Em reparo, 4 - Reparado,
- *         5 - Encerrado, 6 - Confirmado, 7 - Descontinuado)
+ *         5 - Encerrado, 6 - Confirmado)
  * Votos: 0 a 100 (inteiro)
  * Data_abertura: DD-MM-AAAA
  * Data_fechamento: DD-MM-AAAA

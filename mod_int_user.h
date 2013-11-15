@@ -29,6 +29,9 @@ void load_option_5(void);
 void load_option_101(void);
 void load_option_102(void);
 void load_option_103(void);
+void load_option_104(void);
+void load_option_202(void);
+void load_option_301(void);
 
 void print_product(const struct produto *prod);
 void print_developer(const struct desenvolvedor *dev);
