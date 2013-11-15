@@ -55,7 +55,7 @@ void get_password(char *pass, size_t size)
 
 
 
-/**
+/*
  * RFC 822 defines the syntax for email addresses. Unfortunately, the syntax is
  * complex, and it supports several address formats that are no longer relevant.
  * The fortunate thing is that if anyone attempts to use one of these

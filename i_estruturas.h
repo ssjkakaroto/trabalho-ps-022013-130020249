@@ -69,13 +69,13 @@ struct produto {
  * Foi excluido do cadastro: 1 = sim, 0 = não
  */
 struct defeito {
-	char   cod[5];
-	char   desc[31];
+	char   cod[CODE_SIZE];
+	char   desc[DESC_SIZE];
 	size_t est;
 	size_t votos;
-	char   dt_ab[11];
-	char   dt_fc[11];
-	char   des_sel[NAME_SIZE];
+	char   dt_ab[DATE_SIZE];
+	char   dt_fc[DATE_SIZE];
+	char   des_sel[EMAIL_SIZE];
 	char   prod[CODE_SIZE];
 	/* char   *cands[21]; */
 	size_t excluido;
