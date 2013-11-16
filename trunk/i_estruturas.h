@@ -30,8 +30,8 @@ struct desenvolvedor {
 	size_t lid_proj;
 	size_t lid_prod;
 	size_t cand_def;
-	char   cand1[5];
-	char   cand2[5];
+	char   cand1[CODE_SIZE];
+	char   cand2[CODE_SIZE];
 	size_t sol_def;
 	size_t excluido;
 };
@@ -84,6 +84,9 @@ struct defeito {
 
 EXT_STRT void get_string(char *str, size_t size);
 EXT_STRT void get_password(char *pass, size_t size);
-EXT_STRT int verificar_email(const char *email);
+EXT_STRT int  validate_email(const char *email);
+EXT_STRT int  validate_name(const char *nome);
+EXT_STRT int  validate_code(const char *cod);
+EXT_STRT int  validate_version(const char *versao);
 
 #endif

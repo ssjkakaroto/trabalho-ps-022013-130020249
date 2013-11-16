@@ -8,6 +8,7 @@
 #define VERSION_SIZE          6
 #define DESC_SIZE             31
 #define DATE_SIZE             11
+
 #define SUCCESS               1
 #define FALSE                 0
 #define ERROR                -1
@@ -16,5 +17,10 @@
 #define ELEMENT_NOT_EXIST    -4
 #define WRONG_PASS           -5
 #define TOO_MANY_PRODUCTS    -6
+#define TOO_MANY_DEFECTS     -7
+#define INVALID_EMAIL        -8
+#define INVALID_NAME         -9
+#define INVALID_CODE         -10
+#define INVALID_VERSION      -11
 
 #endif
