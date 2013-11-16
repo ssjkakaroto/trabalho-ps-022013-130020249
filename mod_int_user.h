@@ -32,9 +32,11 @@ void load_option_103(void);
 void load_option_104(void);
 void load_option_202(void);
 void load_option_301(void);
+void load_option_401(struct desenvolvedor *dev);
 
 void print_product(const struct produto *prod);
 void print_developer(const struct desenvolvedor *dev);
 void print_defect(const struct defeito *bug);
+void print_error(int erro);
 
 #endif

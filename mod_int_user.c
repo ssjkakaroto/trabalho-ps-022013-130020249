@@ -118,43 +118,36 @@ void print_new_developer_registration(void)
 	
 	system("cls");
 	
-	/*
-	 * NESTA FUN플O QUE DEVEM SER FEITAS AS VERIFICA합ES DE FORMATO
-	 */
-	
 	printf("Cadastro de novo desenvolvedor.\n\n");
 	
-	printf("Informe o email: ");
-	get_string(dev.email, EMAIL_SIZE);
+	verif = 0;
+	do {
+		printf("Informe o email: ");
+		get_string(dev.email, EMAIL_SIZE);
+		verif = validate_email(dev.email);
+		if (verif == INVALID_EMAIL)
+			print_error(verif);
+		printf("\n");
+	} while (verif == INVALID_EMAIL);
 	
-	printf("Informe o nome: ");
-	get_string(dev.nome, NAME_SIZE);
-	
-	/* printf("%d\n", number_of_developers()); */
-	
-	if (number_of_developers() == 0)
-		dev.lid_proj = 1;
-	else
-		dev.lid_proj = 0;
-	
-	dev.lid_prod = 0;
-	dev.cand_def = 0;
-	dev.sol_def = 0;
-	dev.excluido = 0;
-	
-	for (i = 0; i < 5; i++) {
-		dev.cand1[i] = '\0';
-		dev.cand2[i] = '\0';
-	}
+	verif = 0;
+	do {
+		printf("Informe o nome: ");
+		get_string(dev.nome, NAME_SIZE);
+		verif = validate_name(dev.nome);
+		if (verif == INVALID_NAME)
+			print_error(verif);
+		printf("\n");
+	} while (verif == INVALID_NAME);
 	
 	i = 1;
-	
+
 	do {
 		printf("Informe a senha: ");
 		get_password(dev.senha, 6);
 		printf("\nRepita a senha: ");
 		get_password(senha, 6);
-		
+
 		if (strcmp(dev.senha, senha) != 0)
 			printf("\nSenha nao confere.\n");
 		else
@@ -162,12 +155,13 @@ void print_new_developer_registration(void)
 	} while (i == 1);
 	
 	verif = register_new_developer(&dev);
+
 	if (verif == 1) {
 		printf("\nDesenvolvedor cadastrado com sucesso.\n");
 		login_screen();
 	}
 	else {
-		printf("\nFalar qual foi o erro\n");
+		print_error(verif);
 	}
 }
 
@@ -176,36 +170,47 @@ void print_new_product_registration(void)
 {
 	struct produto prod;
 	char cod[CODE_SIZE];
-	size_t i;
 	int verif;
 
 	system("cls");
 
-	/*
-	 * NESTA FUN플O QUE DEVEM SER FEITAS AS VERIFICA합ES DE FORMATO
-	 */
-
 	printf("Cadastro de um novo produto.\n\n");
 
-	printf("Informe o codigo: ");
-	get_string(prod.cod, CODE_SIZE);
+	verif = 0;
+	do {
+		printf("Informe o codigo: ");
+		get_string(prod.cod, CODE_SIZE);
+		verif = validate_code(prod.cod);
+		if (verif == INVALID_CODE)
+			print_error(verif);
+		printf("\n");
+	} while (verif == INVALID_CODE);
 
-	printf("Informe o nome: ");
-	get_string(prod.nome, NAME_SIZE);
+	verif = 0;
+	do {
+		printf("Informe o nome: ");
+		get_string(prod.nome, NAME_SIZE);
+		verif = validate_name(prod.nome);
+		if (verif == INVALID_NAME)
+			print_error(verif);
+		printf("\n");
+	} while (verif == INVALID_NAME);
 
-	printf("Infome a versao: ");
-	get_string(prod.versao, VERSION_SIZE);
-
-	for (i = 0; i < EMAIL_SIZE; i++)
-		prod.lider[i] = '\0';
-
-	prod.excluido = 0;
+	verif = 0;
+	do {
+		printf("Infome a versao: ");
+		get_string(prod.versao, VERSION_SIZE);
+		verif = validate_version(prod.versao);
+		if (verif == INVALID_VERSION)
+			print_error(verif);
+		printf("\n");
+	} while (verif == INVALID_VERSION);
 
 	verif = register_new_product(&prod);
 	if (verif == 1)
 		printf("\nProduto cadastrado com sucesso.\n");
 	else
-		printf("\nFalar qual foi o erro\n");
+		print_erro(verif);
 }
 
 
@@ -214,44 +219,39 @@ void print_new_defect_registration(void)
 	struct defeito bug;
 	size_t i;
 	int verif;
-	time_t data_hora;
-	struct tm *data_str;
-	
+
  	system("cls");
-	
-	/*
-	 * NESTA FUN플O QUE DEVEM SER FEITAS AS VERIFICA합ES DE FORMATO
-	 */
 
 	printf("Cadastro de um novo defeito.\n\n");
 
-	printf("Informe o codigo: ");
-	get_string(bug.cod, CODE_SIZE);
+	verif = 0;
+	do {
+		printf("Informe o codigo: ");
+		get_string(bug.cod, CODE_SIZE);
+		verif = validate_code(bug.cod);
+		if (verif == INVALID_CODE)
+			print_error(verif);
+		printf("\n");
+	} while (verif == INVALID_CODE);
 
 	printf("Informe a descricao: ");
 	get_string(bug.desc, DESC_SIZE);
 
-	printf("Infome o codigo do produto ao qual o defeito esta associado: ");
-	get_string(bug.prod, CODE_SIZE);
-
-	bug.est = 1;
-	bug.votos = 0;
-	bug.excluido = 0;
-
-	time(&data_hora);
-	data_str = localtime(&data_hora);
-	strftime(bug.dt_ab, DATE_SIZE, "%d-%m-%Y", data_str);
-
-	for (i = 0; i < DATE_SIZE; i++)
-		bug.dt_fc[i] = '\0';
-	for (i = 0; i < EMAIL_SIZE; i++)
-		bug.des_sel[i] = '\0';
+	verif = 0;
+	do {
+		printf("Infome o codigo do produto ao qual o defeito esta associado: ");
+		get_string(bug.prod, CODE_SIZE);
+		verif = validate_code(bug.prod);
+		if (verif == INVALID_CODE)
+			print_error(verif);
+		printf("\n");
+	} while (verif == INVALID_CODE);
 
 	verif = register_new_defect(&bug);
 	if (verif == 1)
 		printf("\nProduto cadastrado com sucesso.\n");
 	else
-		printf("\nFalar qual foi o erro\n");
+		print_error(verif);
 }
 
 
@@ -263,6 +263,10 @@ void login_successful(struct desenvolvedor *dev)
 	size_t perfil;
 	
 	load_developer(dev);
+	
+	print_developer(dev);
+
+	system("pause");
 
 	if (dev->lid_proj == 1)
 		perfil = 1;
@@ -458,6 +462,8 @@ void process_option(struct desenvolvedor *dev, size_t opcao, size_t perfil)
   				load_option_301();
   			}
 		case 401:
+			load_option_401(dev);
+			break;
 		case 666:
 			break;
   		default:
@@ -477,6 +483,7 @@ void load_option_1(struct desenvolvedor *dev)
 	devtmp = *dev;
 	
 	printf("Alteracao de nome\n");
+	print_developer(dev);
 	printf("Nome atual: %s\n", dev->nome);
 	printf("Novo nome: ");
 	get_string(dev->nome, NAME_SIZE);
@@ -635,7 +642,7 @@ void load_option_5(void)
 	check = load_defect(&bug);
 	
 	if (check != SUCCESS) {
-		printf("EXPLICAR O ERRO");
+		print_error(check);
 	} else {
 		print_defect(&bug);
 		if (bug.votos < 100) {
@@ -705,7 +712,7 @@ void load_option_102(void)
  	check = load_product(&prod);
 	
 	if (check != SUCCESS) {
-		printf("EXPLICAR O ERRO");
+		print_error(check);
 	} else {
 		prodtmp = prod;
 		
@@ -808,27 +815,16 @@ void load_option_103(void)
 	check = load_product(&prod);
 
 	if (check != SUCCESS) {
-		printf("EXPLICAR O ERRO");
+		print_error(check);
 	} else {
 		check = remove_product(&prod);
-
-		switch (check) {
-		case ERROR_FILE_ACCESS:
-			printf("\nErro de acesso ao arquivo\n");
-			system("pause");
-			break;
-		case ELEMENT_NOT_EXIST:
-			printf("\nProduto inexistente\n");
-			system("pause");
-			break;
-		case SUCCESS:
+		
+		if (check != SUCCESS)
+			print_error(check);
+		else
 			printf("\nProduto removido com sucesso\n");
-			system("pause");
-			break;
-		default:
-			printf("\nErro\n");
-			system("pause");
-		}
+
+		system("pause");
 	}
 }
 
@@ -850,23 +846,13 @@ void load_option_104(void)
 	get_string(dev_email, EMAIL_SIZE);
 	
 	check = assign_product_leader(dev_email, prod_cod);
-	switch (check) {
-		case ERROR_FILE_ACCESS:
-			printf("\nErro de acesso ao arquivo\n");
-			system("pause");
-			break;
-		case ELEMENT_NOT_EXIST:
-			printf("\nProduto ou desenvolvedor inexistente\n");
-			system("pause");
-			break;
-		case SUCCESS:
-			printf("\nDesenvolvedor indicado com sucesso\n");
-			system("pause");
-			break;
-		default:
-			printf("\nErro\n");
-			system("pause");
-	}
+	
+	if (check != SUCCESS)
+		print_error(check);
+	else
+		printf("\nDesenvolvedor indicado com sucesso\n");
+
+	system("pause");
 }
 
 
@@ -977,6 +963,22 @@ void load_option_301(void)
 }
 
 
+void load_option_401(struct desenvolvedor *dev)
+{
+	char cod_def[CODE_SIZE];
+	int ret;
+
+	system("cls");
+	
+    printf("Cadastramento para solucao de um defeito\n\n");
+	printf("Informe o codigo do defeito: ");
+	get_string(cod_def, CODE_SIZE);
+
+	ret = associate_defect(dev, cod_def);
+	print_error(ret);
+}
+
+
 void print_developer(const struct desenvolvedor *dev)
 {
 	printf("Nome: %s\n", dev->nome);
@@ -1008,4 +1010,55 @@ void print_defect(const struct defeito *bug)
 	printf("Produto associado: %s\n", bug->prod);
 	printf("Estado: %d\n", bug->est);
 	printf("Votos: %d\n", bug->votos);
+}
+
+void print_error(int erro)
+{
+	switch (erro) {
+	case ERROR:
+		printf("\nErro ao executar comando.\n");
+		system("pause");
+		break;
+ 	case ERROR_FILE_ACCESS:
+		printf("\nErro ao acessar arquivo.\n");
+		system("pause");
+		break;
+ 	case ELEMENT_EXISTS:
+		printf("\nErro. Elemento ja existe no banco de dados.\n");
+		system("pause");
+		break;
+ 	case ELEMENT_NOT_EXIST:
+		printf("\nErro. Elemento nao existe no banco de dados.\n");
+		system("pause");
+		break;
+ 	case WRONG_PASS:
+		printf("\nSenha incorreta.\n");
+		system("pause");
+		break;
+ 	case TOO_MANY_PRODUCTS:
+		printf("\nErro. Desenvolvedor ja atingiu o numero maximo de produtos ");
+		printf("para ser lider.\n");
+		system("pause");
+		break;
+ 	case TOO_MANY_DEFECTS:
+		printf("\nErro. Desenvolvedor ja atingiu o numero maximo de defeitos ");
+		printf("para se candidatar.\n");
+		system("pause");
+		break;
+  	case INVALID_EMAIL:
+		printf("\nEmail em formato invalido. Insira email em formato correto.");
+		system("pause");
+		break;
+  	case INVALID_NAME:
+		printf("\nNome em formato invalido. Insira nome em formato correto.");
+		system("pause");
+		break;
+  	case INVALID_CODE:
+		printf("\nCodigo em formato invalido. Insira codigo em formato correto.");
+		system("pause");
+		break;
+	default:
+		printf("\nValor retornado: %d\n", erro);
+		system("pause");
+	}
 }

@@ -52,83 +52,85 @@ void get_password(char *pass, size_t size)
 }
 
 
-
-
-
-/*
- * RFC 822 defines the syntax for email addresses. Unfortunately, the syntax is
- * complex, and it supports several address formats that are no longer relevant.
- * The fortunate thing is that if anyone attempts to use one of these
- * no-longer-relevant address formats, you can be reasonably certain they are
- * attempting to do something they are not supposed to do.
+/**
+ * Função que faz a validação básica do formato do email.
+ * Não permite que o caracter digitado no email seja menor que 32 (espaço) ou
+ * maior que 126 (~), nem que seja igual aos caracteres proibidos pelo RFC 822.
  *
- * You can use the following spc_email_isvalid( ) function to check the format
- * of an email address. It will perform only a syntactical check and will not
- * actually attempt to verify the authenticity of the address by attempting to
- * deliver mail to it or by performing any DNS lookups on the domain name
- * portion of the address.
- *
- * The function only validates the actual email address and will not accept any
- * associated data. For example, it will fail to validate
- * "Bob Bobson <bob@bobson.com>", but it will successfully validate
- * "bob@bobson.com".
- * If the supplied email address is syntactically valid, spc_email_isvalid( )
- * will return 1; otherwise, it will return 0.
- *
- * http://www.oreillynet.com/network/excerpt/spcookbook_chap03/index3.html
- *
-int spc_email_isvalid(const char *address)
+ * Valor de retorno: SUCCESS se o email for valido e INVALID_EMAIL se for
+ * invalido.
+ */
+int validate_email(const char *email)
 {
-	int count = 0; /*!< Descrição da variável para o Doxygen *
-	const char *c, *domain;
+	size_t cont = 0;
+	const char *c, *dominio;
 	static char *rfc822_specials = "()<>@,;:\\\"[]";
 
-	/* first we validate the name portion (name@domain) *
-	for (c = address;  *c;  c++) {
-		if (*c == '\"' && (c == address || *(c - 1) == '.' || *(c - 1) == '\"')) {
-			while (*++c) {
-				if (*c == '\"') break;
-				if (*c == '\\' && (*++c == ' ')) continue;
-				if (*c <= ' ' || *c >= 127) return 0;
-			}
-			if (!*c++) return 0;
-			if (*c == '@') break;
-			if (*c != '.') return 0;
-			continue;
-		}
-		if (*c == '@') break;
-		if (*c <= ' ' || *c >= 127) return 0;
-		if (strchr(rfc822_specials, *c)) return 0;
+	for (c = email; *c; c++) {
+		if (*c == '@')
+			break;
+		if (*c <= ' ' || *c >= 126)
+			return INVALID_EMAIL;
+		if (strchr(rfc822_specials, *c))
+			return INVALID_EMAIL;
 	}
 
-	if (c == address || *(c - 1) == '.') return 0;
-
-	/* next we validate the domain portion (name@domain) *
-	if (!*(domain = ++c)) return 0;
+	if (!*(dominio = ++c))
+		return INVALID_EMAIL;
 	do {
-		if (*c == '.') {
-			if (c == domain || *(c - 1) == '.') return 0;
-			count++;
-		}
-		if (*c <= ' ' || *c >= 127) return 0;
-		if (strchr(rfc822_specials, *c)) return 0;
+		if (*c <= ' ' || *c >= 126)
+			return INVALID_EMAIL;
+		if (strchr(rfc822_specials, *c))
+			return INVALID_EMAIL;
+		cont++;
 	} while (*++c);
 
-	return (count >= 1);
+	return(cont >= SUCCESS);
 }
-*/
 
-int verificar_email(const char *email)
+
+int validate_name(const char *nome)
 {
-	size_t count = 0;
 	const char *c;
-	static char *rfc822_specials = "()<>@,;:\\\"[]";
 	
-	for (c = email;  *c;  c++) {
-		//if (email[i] == '@')
-			//break;
-		printf("%c", *c);
+	for (c = nome; *c; c++) {
+		if ((*c < 'A' || *c > 'Z') && (*c < 'a' || *c > 'z') && (*c != ' '))
+			return INVALID_NAME;
 	}
-	
-	return count;
+
+	return SUCCESS;
+}
+
+
+int validate_code(const char *cod)
+{
+	const char *c;
+
+	for (c = cod; *c; c++) {
+		if ((*c < 'A' || *c > 'Z') && (*c < 'a' || *c > 'z'))
+			return INVALID_CODE;
+	}
+
+	return SUCCESS;
+}
+
+
+int validate_version(const char *versao)
+{
+	const char *c;
+
+	c = versao;
+
+	if (c[2] != '.')
+		return INVALID_VERSION;
+	if (c[0] < '0' || c[0] > '9')
+		return INVALID_VERSION;
+	if (c[1] < '0' || c[1] > '9')
+		return INVALID_VERSION;
+	if (c[3] < '0' || c[3] > '9')
+		return INVALID_VERSION;
+	if (c[4] < '0' || c[4] > '9')
+		return INVALID_VERSION;
+
+	return SUCCESS;
 }
