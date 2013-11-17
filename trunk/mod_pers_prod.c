@@ -240,9 +240,9 @@ int delete_product(struct produto *prod)
 }
 
 /**
- * Função para contar o número de produtoes cadastrados.
+ * Função para contar o número de produtos cadastrados.
  */
- int count_products(void)
+int count_products(void)
 {
 	FILE *input;
 	struct produto prodcheck;
@@ -258,6 +258,39 @@ int delete_product(struct produto *prod)
 
 		if (prodcheck.excluido == 1) {
 			ret--;
+		}
+	}
+
+	fclose(input);
+
+	return(ret);
+}
+
+
+/**
+ * Função que remove um desenvolvedor como lider de produto.
+ */
+int remove_product_leader(char *dev_email)
+{
+	FILE *input;
+	struct produto prodtmp;
+	int ret = 0;
+	size_t i, pos = 0;
+
+	input = fopen("cad_prods.bin", "rb+");
+
+	if (input == NULL)
+		return(ERROR_FILE_ACCESS);
+
+	while (fread(&prodtmp, sizeof(struct produto), 1, input) == 1) {
+		pos++;
+		if (strcmp(prodtmp.lider, dev_email) == 0) {
+			for (i = 0; i < EMAIL_SIZE; i++) {
+				prodtmp.lider[i] = '\0';
+			}
+			ret = fseek(input, (pos-1) * sizeof(struct produto), SEEK_SET);
+			ret += fwrite(&prodtmp, sizeof(struct produto), 1, input);
+			ret += fseek(input, pos * sizeof(struct produto), SEEK_SET);
 		}
 	}
 

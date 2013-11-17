@@ -265,3 +265,34 @@ int delete_defect(struct defeito *bug)
 
 	return(ret);
 }
+
+
+/**
+ * Função que remove todos os defeitos associados com determinado produto.
+ */
+int remove_product_defects(char *cod_prod)
+{
+	FILE *input;
+	struct defeito bugtmp;
+	int ret = 0;
+	size_t pos = 0;
+
+	input = fopen("cad_bugs.bin", "rb+");
+
+	if (input == NULL)
+		return(ERROR_FILE_ACCESS);
+
+	while (fread(&bugtmp, sizeof(struct defeito), 1, input) == 1) {
+		pos++;
+		if (strcmp(bugtmp.prod, cod_prod) == 0) {
+			bugtmp.excluido = 1;
+			ret = fseek(input, (pos-1) * sizeof(struct defeito), SEEK_SET);
+			ret += fwrite(&bugtmp, sizeof(struct defeito), 1, input);
+			ret += fseek(input, pos * sizeof(struct defeito), SEEK_SET);
+		}
+	}
+
+	fclose(input);
+
+	return(ret);
+}

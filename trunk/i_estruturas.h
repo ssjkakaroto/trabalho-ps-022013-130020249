@@ -21,6 +21,7 @@
  * É candidato a solução de defeito: # de produtos que é candidato (0 a 2)
  * cand1 e cand2: strings de ids dos defeitos ao qual é candidato
  * Está solucionando defeito: # de produtos que está solucionando (0 a 1)
+ * Defeito que está solucionando: código do defeito
  * Foi excluido do cadastro: 1 = sim, 0 = não
  */
 struct desenvolvedor {
@@ -33,6 +34,7 @@ struct desenvolvedor {
 	char   cand1[CODE_SIZE];
 	char   cand2[CODE_SIZE];
 	size_t sol_def;
+	char   def[CODE_SIZE];
 	size_t excluido;
 };
 
@@ -64,7 +66,6 @@ struct produto {
  * Data_abertura: DD-MM-AAAA
  * Data_fechamento: DD-MM-AAAA
  * Desenvolvedor solucionando: email(id)
- * Candidatos para solucionar: emails(ids) REMOVER ESTE CAMPO
  * Produto ao qual o defeito esta associado: codigo(id)
  * Foi excluido do cadastro: 1 = sim, 0 = não
  */
@@ -77,7 +78,6 @@ struct defeito {
 	char   dt_fc[DATE_SIZE];
 	char   des_sel[EMAIL_SIZE];
 	char   prod[CODE_SIZE];
-	/* char   *cands[21]; */
 	size_t excluido;
 };
 

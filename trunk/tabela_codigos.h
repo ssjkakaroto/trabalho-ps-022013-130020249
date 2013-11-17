@@ -22,5 +22,8 @@
 #define INVALID_NAME         -9
 #define INVALID_CODE         -10
 #define INVALID_VERSION      -11
+#define DEV_IS_PROJ_LEADER   -12
+#define DEV_NOT_CANDIDATE    -13
+#define ALREADY_SOLVING      -14
 
 #endif

@@ -10,10 +10,11 @@
 #include "tabela_codigos.h"
 #include "i_estruturas.h"
 
-EXT_PPROD int register_defect(const struct defeito *bug);
-EXT_PPROD int read_defect(struct defeito *bug);
-EXT_PPROD int rewrite_defect(const struct defeito *bug);
-EXT_PPROD int delete_defect(struct defeito *bug);
-EXT_PPROD int count_defects(void);
+EXT_PDEF int register_defect(const struct defeito *bug);
+EXT_PDEF int read_defect(struct defeito *bug);
+EXT_PDEF int rewrite_defect(const struct defeito *bug);
+EXT_PDEF int delete_defect(struct defeito *bug);
+EXT_PDEF int count_defects(void);
+EXT_PDEF int remove_product_defects(char *cod_prod);
 
 #endif
