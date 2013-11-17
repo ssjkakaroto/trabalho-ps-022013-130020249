@@ -64,8 +64,9 @@ int register_new_developer(struct desenvolvedor *dev)
 	for (i = 0; i < CODE_SIZE; i++) {
 		dev->cand1[i] = '\0';
 		dev->cand2[i] = '\0';
+		dev->def[i] = '\0';
 	}
-	
+
 	return(register_developer(dev));
 }
 
@@ -107,13 +108,65 @@ int overwrite_developer(const struct desenvolvedor *dev)
 
 
 /**
- * Função que remove um desenvolvedor do bando de dados, delegando para o módulo
- * de persistência.
+ * Função que remove um desenvolvedor do banco de dados. Limpa as entradas dos
+ * produtos que ele seja lider e do defeito que ele esta solucionando.
  */
 int remove_developer(struct desenvolvedor *dev)
 {
-	/* FALTA PROCURAR TODOS OS PRODUTOS E DEFEITOS ASSOCIADOS COM O DESENVOLVEDOR E FAZER AS ALTERACOES NECESSARIAS */
+	size_t i;
+	struct defeito bugtmp;
+	int ret;
+	
+	if (dev->lid_proj == 1)
+		return DEV_IS_PROJ_LEADER;
+
+	if (dev->lid_prod > 0)
+	    remove_product_leader(dev->email);
+
+	strcpy(bugtmp.cod, dev->def);
+	
+	printf("Ponto A\n");
+	printf("%d\n", load_defect(&bugtmp));
+	if (load_defect(&bugtmp) == SUCCESS) {
+		printf("Ponto B\n");
+		for (i = 0; i < EMAIL_SIZE; i++)
+			bugtmp.des_sel[i] = '\0';
+		overwrite_defect(&bugtmp);
+	}
+
 	return(delete_developer(dev));
+}
+
+
+int assign_new_project_leader(struct desenvolvedor *dev, const char *dev_email)
+{
+	struct desenvolvedor devtmp;
+	int ret;
+	
+	strcpy(devtmp.email, dev_email);
+	
+	ret = load_developer(&devtmp);
+	if (ret == SUCCESS) {
+		devtmp.lid_proj = 1;
+		ret = overwrite_developer(&devtmp);
+		if (ret = SUCCESS) {
+			dev->lid_proj = 0;
+			ret = overwrite_developer(dev);
+		}
+	}
+	
+	return ret;
+}
+
+
+int return_profile(const struct desenvolvedor *dev)
+{
+	if (dev->lid_proj == 1)
+		return 1;
+	else if (dev->lid_prod == 1)
+		return 2;
+	else
+		return 3;
 }
 
 
@@ -126,7 +179,7 @@ int remove_developer(struct desenvolvedor *dev)
 /**
  * Função que registra um novo produto, delegando para o módulo de persistência.
  */
-int register_new_product(const struct produto *prod)
+int register_new_product(struct produto *prod)
 {
 	size_t i;
 	
@@ -171,8 +224,22 @@ int overwrite_product(const struct produto *prod)
  */
 int remove_product(struct produto *prod)
 {
-	/* FALTA FAZER A BUSCA NO BANDO DE DADOS DE DEFEITOS, REMOVENDO TODOS OS DEFEITOS ASSOCIADOS COM O PRODUTO */
-	return(delete_product(prod));
+	int ret;
+	struct desenvolvedor devtmp;
+
+	remove_product_defects(prod->cod);
+
+	strcpy(devtmp.email, prod->lider);
+	
+	load_developer(&devtmp);
+	
+	devtmp.lid_prod--;
+	
+	overwrite_developer(&devtmp);
+	
+	ret = delete_product(prod);
+
+	return ret;
 }
 
 
@@ -216,21 +283,23 @@ int assign_product_leader(char *dev_email, char *prod_cod)
  */
  
 /**
- * Função que registra um novo defeito, delegando para o módulo de persistência.
+ * Função que registra um novo defeito, preechendo os campos que nao necessitam
+ * de interacao com o usuario, em seguida delega para o módulo de persistência.
  */
-int register_new_defect(const struct defeito *bug)
+int register_new_defect(struct defeito *bug)
 {
 	time_t data_hora;
 	struct tm *data_str;
 	struct produto prodtmp;
+	int ret;
+	size_t i;
 	
 	strcpy(prodtmp.cod, bug->prod);
 	
+	ret = load_product(&prodtmp);
+	if (ret < SUCCESS)
+		return ret;
 	
-	/* FAZER UMA FUNCAO NA LOGICA DE NEGOCIO PARA ESTE CADASTRO E VERIFICAR SE O PRODUTO EXISTE */
-	
-	
-
 	bug->est = 1;
 	bug->votos = 0;
 	bug->excluido = 0;
@@ -273,7 +342,10 @@ int overwrite_defect(const struct defeito *bug)
 	return(rewrite_defect(bug));
 }
 
-
+/**
+ * Função para registrar o desenvolvedor como candidato para solucionar um
+ * defeito.
+ */
 int associate_defect(struct desenvolvedor *dev, char *cod_def)
 {
 	int ret;
@@ -299,6 +371,44 @@ int associate_defect(struct desenvolvedor *dev, char *cod_def)
 		default:
 			return(TOO_MANY_DEFECTS);
 		}
-		return(ret);
+		return ret;
 	}
+}
+
+
+/**
+ * Função que vai indicar um desenvolvedor para solucionar defeito
+ */
+int assign_defect_to_developer(char *dev_email, char *def_cod)
+{
+	struct desenvolvedor dev;
+	struct defeito bug;
+	int ret;
+
+	strcpy(dev.email, dev_email);
+	strcpy(bug.cod, def_cod);
+	
+	ret = read_developer(&dev);
+	if (ret > 0) {
+		if (dev.sol_def > 0) {
+			return ALREADY_SOLVING;
+		} else {
+			if ((strcmp(dev.cand1, def_cod) == 0) ||
+			    (strcmp(dev.cand2, def_cod) == 0)) {
+
+				if (read_defect(&bug) > 0) {
+					strcpy(bug.des_sel, dev_email);
+					ret = overwrite_defect(&bug);
+					if (ret == SUCCESS)
+						dev.sol_def++;
+						strcpy(dev.def, def_cod);
+						ret = overwrite_developer(&dev);
+				}
+			} else {
+				return DEV_NOT_CANDIDATE;
+			}
+		}
+	}
+	
+	return ret;
 }

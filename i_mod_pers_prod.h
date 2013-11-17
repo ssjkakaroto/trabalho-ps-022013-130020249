@@ -15,5 +15,6 @@ EXT_PPROD int read_product(struct produto *prod);
 EXT_PPROD int rewrite_product(const struct produto *prod);
 EXT_PPROD int delete_product(struct produto *prod);
 EXT_PPROD int count_products(void);
+EXT_PPROD int remove_product_leader(char *dev_email);
 
 #endif

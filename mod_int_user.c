@@ -83,12 +83,13 @@ int get_right_pass(struct desenvolvedor *dev)
 void unknown_user(void)
 {
 	char c = 'z';
-
-	printf("Deseja cadastrar um novo usuario? (S ou N): ");
-	c = tolower(getchar());
-	getchar();
 	
 	do {
+		printf("Deseja cadastrar um novo usuario? (S ou N): ");
+		c = tolower(fgetc(stdin));
+		if (fgetc(stdin) != '\n')
+			fgetc(stdin);
+
 		switch (c) {
 		case 's':
 			print_new_developer_registration();
@@ -97,7 +98,8 @@ void unknown_user(void)
 			printf("O programa ira fechar\n");
 			break;
 		default:
-			printf("Opcao invalida. Informe S ou N.\n");
+			printf("Opcao invalida.\n");
+
 		}
 	} while ((c != 's') && (c != 'n'));
 }
@@ -156,8 +158,9 @@ void print_new_developer_registration(void)
 	
 	verif = register_new_developer(&dev);
 
-	if (verif == 1) {
+	if (verif == SUCCESS) {
 		printf("\nDesenvolvedor cadastrado com sucesso.\n");
+		system("pause");
 		login_screen();
 	}
 	else {
@@ -207,10 +210,10 @@ void print_new_product_registration(void)
 	} while (verif == INVALID_VERSION);
 
 	verif = register_new_product(&prod);
-	if (verif == 1)
+	if (verif == SUCCESS)
 		printf("\nProduto cadastrado com sucesso.\n");
 	else
-		print_erro(verif);
+		print_error(verif);
 }
 
 
@@ -248,7 +251,7 @@ void print_new_defect_registration(void)
 	} while (verif == INVALID_CODE);
 
 	verif = register_new_defect(&bug);
-	if (verif == 1)
+	if (verif == SUCCESS)
 		printf("\nProduto cadastrado com sucesso.\n");
 	else
 		print_error(verif);
@@ -256,26 +259,18 @@ void print_new_defect_registration(void)
 
 
 /**
- * Função que chama o menu correto dependendo do perfil do desenvolvedor.
+ * Função que chama o menu correto dependendo do perfil do desenvolvedor,
+ * apos o login.
  */
 void login_successful(struct desenvolvedor *dev)
 {
-	size_t perfil;
-	
 	load_developer(dev);
 	
 	print_developer(dev);
 
 	system("pause");
 
-	if (dev->lid_proj == 1)
-		perfil = 1;
-	else if (dev->lid_prod == 1)
-		perfil = 2;
-	else
-		perfil = 3;
-
-	print_logged_menu(dev, perfil);
+	print_logged_menu(dev, return_profile(dev));
 }
 
 /**
@@ -308,7 +303,7 @@ void login_successful(struct desenvolvedor *dev)
  * Responsavel pelo defeito
  * -Alterar status do defeito (novo -> confirmado -> em reparo -> reparado)
  */
-void print_logged_menu(struct desenvolvedor *dev, size_t perfil)
+void print_logged_menu(struct desenvolvedor *dev, int perfil)
 {
 	int loop = 665;
 
@@ -347,6 +342,9 @@ void print_common_menu(void)
 	printf("3) Apagar conta\n");
 	printf("4) Cadastrar defeito\n");
 	printf("5) Votar em defeito\n");
+	printf("6) Imprimir desenvolvedor\n");
+	printf("7) Imprimir defeito\n");
+	printf("8) Imprimir produto\n");
 }
 
 
@@ -396,7 +394,7 @@ int load_option(struct desenvolvedor *dev, size_t perfil)
 }
 
 
-void process_option(struct desenvolvedor *dev, size_t opcao, size_t perfil)
+void process_option(struct desenvolvedor *dev, size_t opcao, int perfil)
 {
 	int check;
 	
@@ -419,6 +417,15 @@ void process_option(struct desenvolvedor *dev, size_t opcao, size_t perfil)
 			break;
   		case 5:
 			load_option_5();
+			break;
+    	case 6:
+			load_option_6(dev);
+			break;
+  		case 7:
+			load_option_7();
+			break;
+  		case 8:
+			load_option_8();
 			break;
 		case 101:
 			if (perfil != 1)
@@ -445,6 +452,14 @@ void process_option(struct desenvolvedor *dev, size_t opcao, size_t perfil)
 				load_option_104();
 			break;
   		case 201:
+  			if ((perfil != 1) && (perfil != 2)) {
+				printf("Voce nao possui perfil para esta opcao.\n");
+				system("pause");
+			}
+			else {
+				load_option_201();
+			}
+			break;
 		case 202:
 			if ((perfil != 1) && (perfil != 2)) {
 				printf("Voce nao possui perfil para esta opcao.\n");
@@ -478,17 +493,23 @@ void load_option_1(struct desenvolvedor *dev)
 {
 	struct desenvolvedor devtmp;
 	char c;
-	int check;
+	int check, verif;
 
 	devtmp = *dev;
 	
 	printf("Alteracao de nome\n");
 	print_developer(dev);
 	printf("Nome atual: %s\n", dev->nome);
-	printf("Novo nome: ");
-	get_string(dev->nome, NAME_SIZE);
 
-	/* FAZER VERIFICACAO SE O NOME ESTA NA ESTRUTURA CORRETA */
+	verif = 0;
+	do {
+		printf("Novo nome: ");
+		get_string(dev->nome, NAME_SIZE);
+		verif = validate_name(dev->nome);
+		if (verif == INVALID_NAME)
+			print_error(verif);
+		printf("\n");
+	} while (verif == INVALID_NAME);
 
 	printf("Confirma alterar o nome de %s\npara %s?\n", devtmp.nome,
            dev->nome);
@@ -500,10 +521,13 @@ void load_option_1(struct desenvolvedor *dev)
 		switch (c) {
 		case 's':
 			check = overwrite_developer(dev);
-			if (check == 1)
+			if (check == 1) {
 				printf("Nome alterado com sucesso.\n");
-			else
+			}
+			else {
+				print_error(check);
 				printf("Erro ao alterar nome\n");
+			}
 			break;
 		case 'n':
 			strcpy(dev->nome, devtmp.nome);
@@ -590,21 +614,23 @@ void load_option_2(struct desenvolvedor *dev)
 int load_option_3(struct desenvolvedor *dev)
 {
 	int ret;
+	char novo_dev_email[EMAIL_SIZE];
 	
 	ret = remove_developer(dev);
 	
-	switch (ret) {
-	case ERROR_FILE_ACCESS:
-		printf("\nErro de acesso ao arquivo\n");
-		break;
-	case ELEMENT_NOT_EXIST:
-		printf("\nDesenvolvedor inexistente\n");
-		break;
-	case SUCCESS:
-		printf("\nDesenvolvedor removido com sucesso\n");
-		break;
-	default:
-		printf("\nErro\n");
+	if (ret == DEV_IS_PROJ_LEADER) {
+		printf("\nO atual desenvolvedor e' o lider do projeto.\n");
+		printf("Sera necessario designar novo lider de projeto.\n");
+		printf("Informe o email do novo lider: ");
+		get_string(novo_dev_email, EMAIL_SIZE);
+		ret = assign_new_project_leader(dev, novo_dev_email);
+		if (ret < SUCCESS)
+			print_error(ret);
+		else
+			ret = remove_developer(dev);
+	} else {
+		if (ret < SUCCESS)
+			print_error(ret);
 	}
 	
 	return(ret);
@@ -681,6 +707,39 @@ void load_option_5(void)
 }
 
 
+void load_option_6(const struct desenvolvedor *dev)
+{
+	system("cls");
+	print_developer(dev);
+	system("pause");
+}
+
+
+void load_option_7(void)
+{
+	struct defeito bugtmp;
+	
+	system("cls");
+	printf("Infome o codigo do defeito: ");
+	get_string(bugtmp.cod, CODE_SIZE);
+	load_defect(&bugtmp);
+	print_defect(&bugtmp);
+	system("pause");
+}
+
+
+void load_option_8(void)
+{
+	struct produto prodtmp;
+
+	system("cls");
+	printf("Infome o codigo do produto: ");
+	get_string(prodtmp.cod, CODE_SIZE);
+	load_product(&prodtmp);
+	print_product(&prodtmp);
+	system("pause");
+}
+
 /**
  * Opcao 101: cadastrar novo produto
  */
@@ -701,7 +760,7 @@ void load_option_102(void)
 {
 	struct produto prod, prodtmp;
 	char c;
-	int check, opcao;
+	int check, opcao, verif;
 
 	system("cls");
 	
@@ -728,11 +787,16 @@ void load_option_102(void)
 		
 		switch (opcao) {
 		case 1:
-			printf("\nInforme o novo nome: ");
-			get_string(prod.nome, NAME_SIZE);
-			
-			/* FAZER CHECAGEM DE FORMATO */
-			
+			verif = 0;
+			do {
+				printf("Informe o novo nome: ");
+				get_string(prod.nome, NAME_SIZE);
+				verif = validate_name(prod.nome);
+				if (verif == INVALID_NAME)
+					print_error(verif);
+				printf("\n");
+			} while (verif == INVALID_NAME);
+
 			printf("Confirma alterar o nome de %s\npara %s?\n", prodtmp.nome,
                    prod.nome);
 			printf("(S ou N): ");
@@ -759,13 +823,18 @@ void load_option_102(void)
 			
 			break;
 		case 2:
-			printf("\nInforme a nova versao: ");
-			get_string(prod.versao, VERSION_SIZE);
-			
-			/* FAZER CHECAGEM DE FORMATO */
+			verif = 0;
+			do {
+				printf("Infome a nova versao: ");
+				get_string(prod.versao, VERSION_SIZE);
+				verif = validate_version(prod.versao);
+				if (verif == INVALID_VERSION)
+					print_error(verif);
+				printf("\n");
+			} while (verif == INVALID_VERSION);
 
-			printf("Confirma alterar a versao de\n%s para %s?\n", prodtmp.versao,
-                   prod.versao);
+			printf("Confirma alterar a versao de\n%s para %s?\n",
+			        prodtmp.versao, prod.versao);
 			printf("(S ou N): ");
 			c = tolower(getchar());
 			getchar();
@@ -857,6 +926,33 @@ void load_option_104(void)
 
 
 /**
+ * Opcao 201: indicar desenvolvedor para solucionar defeito
+ */
+void load_option_201(void)
+{
+	int check;
+	char dev_email[EMAIL_SIZE], def_cod[CODE_SIZE];
+
+	system("cls");
+
+	printf("Designar desenvolvedor para solucionar defeito\n\n");
+	printf("Informe o codigo do defeito: ");
+	get_string(def_cod, CODE_SIZE);
+	printf("Informe o email do desenvolvedor: ");
+	get_string(dev_email, EMAIL_SIZE);
+
+	check = assign_defect_to_developer(dev_email, def_cod);
+
+	if (check != SUCCESS)
+		print_error(check);
+	else
+		printf("\nDesenvolvedor indicado com sucesso\n");
+
+	system("pause");
+}
+
+
+/**
  * Opcao 202: alterar estado de defeito
  */
 void load_option_202(void)
@@ -873,7 +969,7 @@ void load_option_202(void)
 	check = load_defect(&bug);
 
 	if (check != SUCCESS) {
-		printf("EXPLICAR O ERRO");
+		print_error(check);
 	} else {
 		print_defect(&bug);
 		if (bug.est == 4) {
@@ -926,7 +1022,7 @@ void load_option_301(void)
 	check = load_defect(&bug);
 
 	if (check != SUCCESS) {
-		printf("EXPLICAR O ERRO");
+		print_error(check);
 	} else {
 		print_defect(&bug);
 		if (bug.est <= 4) {
@@ -962,7 +1058,9 @@ void load_option_301(void)
 	}
 }
 
-
+/**
+ * Opcao 401: candidatar-se para a solucao de um defeito
+ */
 void load_option_401(struct desenvolvedor *dev)
 {
 	char cod_def[CODE_SIZE];
@@ -990,6 +1088,7 @@ void print_developer(const struct desenvolvedor *dev)
 	printf("Defeito 1: %s\n", dev->cand1);
 	printf("Defeito 2: %s\n", dev->cand2);
 	printf("Numero de defeitos que esta solucionando: %d\n", dev->sol_def);
+	printf("Defeito solucionando: %s\n", dev->def);
 }
 
 void print_product(const struct produto *prod)
@@ -1046,15 +1145,24 @@ void print_error(int erro)
 		system("pause");
 		break;
   	case INVALID_EMAIL:
-		printf("\nEmail em formato invalido. Insira email em formato correto.");
+		printf("\nEmail em formato invalido. Insira email em formato correto.\n");
 		system("pause");
 		break;
   	case INVALID_NAME:
-		printf("\nNome em formato invalido. Insira nome em formato correto.");
+		printf("\nNome em formato invalido. Insira nome em formato correto.\n");
 		system("pause");
 		break;
   	case INVALID_CODE:
-		printf("\nCodigo em formato invalido. Insira codigo em formato correto.");
+		printf("\nCodigo em formato invalido. Insira codigo em formato correto.\n");
+		system("pause");
+		break;
+  	case DEV_NOT_CANDIDATE:
+		printf("\nO desenvolvedor nao e' candidato para solucionar esse ");
+		printf("defeito.\n");
+		system("pause");
+		break;
+ 	case ALREADY_SOLVING:
+		printf("\nErro. Desenvolvedor ja' esta solucionando um defeito.\n");
 		system("pause");
 		break;
 	default:

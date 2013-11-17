@@ -225,7 +225,7 @@ int read_developer_deleted(void)
  */
 int delete_developer(struct desenvolvedor *dev)
 {
-	int ret, pos;
+	int pos;
 
 	pos = read_developer(dev);
 	
@@ -235,8 +235,7 @@ int delete_developer(struct desenvolvedor *dev)
 		return(ELEMENT_NOT_EXIST);
 	} else {
 		dev->excluido = 1;
-		ret = write_developer(dev, pos);	
-		return(ret);
+		return(write_developer(dev, pos));
 	}
 }
 
