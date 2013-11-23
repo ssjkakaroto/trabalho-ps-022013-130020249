@@ -1,3 +1,17 @@
+/*
+ *******************************************************************************
+ * Universidade de Brasília
+ * Instituto de Ciências Exatas
+ * Departamento de Ciência da Computação
+ * Matéria: Programação Sistemática
+ * Professor: Fernando Albuquerque
+ * Aluno: Aaron Sue
+ * Matrícula: 13/0020249
+ * Trabalho Prático
+ * Módulo de interface com o usuário
+ *******************************************************************************
+ */
+
 #include "tabela_codigos.h"
 #include "i_estruturas.h"
 #include "i_mod_log_neg.h"
@@ -252,7 +266,7 @@ void print_new_defect_registration(void)
 
 	verif = register_new_defect(&bug);
 	if (verif == SUCCESS)
-		printf("\nProduto cadastrado com sucesso.\n");
+		printf("\nDefeito cadastrado com sucesso.\n");
 	else
 		print_error(verif);
 }
@@ -266,9 +280,9 @@ void login_successful(struct desenvolvedor *dev)
 {
 	load_developer(dev);
 	
-	print_developer(dev);
+	/* print_developer(dev);
 
-	system("pause");
+	system("pause"); */
 
 	print_logged_menu(dev, return_profile(dev));
 }
@@ -671,7 +685,7 @@ void load_option_5(void)
 		print_error(check);
 	} else {
 		print_defect(&bug);
-		if (bug.votos < 100) {
+		if (bug.votos < 100 && bug.est == 1) {
 			printf("Confirma o voto?\n");
 			printf("(S ou N): ");
 			c = tolower(getchar());
@@ -700,7 +714,7 @@ void load_option_5(void)
 
 			} while ((c != 's') && (c != 'n'));
 		} else {
-  			printf("Numero máximo de votos atingido\n");
+  			printf("Numero máximo de votos atingido ou produto nao é novo\n");
 			system("pause");
 		}
 	}
@@ -1084,7 +1098,7 @@ void print_developer(const struct desenvolvedor *dev)
 	printf("Senha: %s\n", dev->senha);
 	printf("Lider de projeto: %d\n", dev->lid_proj);
 	printf("Lider de produto: %d\n", dev->lid_prod);
-	printf("# de defeitos que eh candidato: %d\n", dev->cand_def);
+	printf("# de defeitos que e' candidato: %d\n", dev->cand_def);
 	printf("Defeito 1: %s\n", dev->cand1);
 	printf("Defeito 2: %s\n", dev->cand2);
 	printf("Numero de defeitos que esta solucionando: %d\n", dev->sol_def);

@@ -1,3 +1,17 @@
+/*
+ *******************************************************************************
+ * Universidade de Brasília
+ * Instituto de Ciências Exatas
+ * Departamento de Ciência da Computação
+ * Matéria: Programação Sistemática
+ * Professor: Fernando Albuquerque
+ * Aluno: Aaron Sue
+ * Matrícula: 13/0020249
+ * Trabalho Prático
+ * Arquivo com as funções de validação de formato
+ *******************************************************************************
+ */
+
 #define ESTRUTURAS_SERV
 
 #include "tabela_codigos.h"

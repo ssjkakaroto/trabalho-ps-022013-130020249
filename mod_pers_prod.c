@@ -1,3 +1,17 @@
+/*
+ *******************************************************************************
+ * Universidade de Brasília
+ * Instituto de Ciências Exatas
+ * Departamento de Ciência da Computação
+ * Matéria: Programação Sistemática
+ * Professor: Fernando Albuquerque
+ * Aluno: Aaron Sue
+ * Matrícula: 13/0020249
+ * Trabalho Prático
+ * Módulo de persistência de produtos
+ *******************************************************************************
+ */
+
 #define PERS_PROD_SERV
 
 #include "tabela_codigos.h"
