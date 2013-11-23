@@ -1,0 +1,142 @@
+\hypertarget{mod__pers__dev_8c}{\section{ReferÃªncia do Arquivo mod\-\_\-pers\-\_\-dev.\-c}
+\label{mod__pers__dev_8c}\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}}
+}
+{\ttfamily \#include \char`\"{}tabela\-\_\-codigos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}i\-\_\-estruturas.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}i\-\_\-mod\-\_\-pers\-\_\-dev.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{DefiniÃ§Ãµes e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mod__pers__dev_8c_a4a4774f5abc91a048565226ab2abc817}{P\-E\-R\-S\-\_\-\-D\-E\-V\-\_\-\-S\-E\-R\-V}
+\end{DoxyCompactItemize}
+\subsection*{FunÃ§Ãµes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mod__pers__dev_8c_a1ba03e31121f4be0aa4d75ebf31fdbde}{write\-\_\-developer} (const struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev, size\-\_\-t posicao)
+\item 
+int \hyperlink{mod__pers__dev_8c_a2e769ed0a4086f60c86544a595202944}{register\-\_\-developer} (const struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+int \hyperlink{mod__pers__dev_8c_aa861ed0a72b668a0ae437e46b67ff952}{read\-\_\-developer} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+int \hyperlink{mod__pers__dev_8c_a186502f924dd9bc7530caf966e869a1b}{read\-\_\-developer\-\_\-deleted} (void)
+\item 
+int \hyperlink{mod__pers__dev_8c_aa8e5ed39d3d62d4472c11a802e8650c0}{rewrite\-\_\-developer} (const struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+int \hyperlink{mod__pers__dev_8c_adfa162a1999145030efb7b75e586bf58}{delete\-\_\-developer} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+int \hyperlink{mod__pers__dev_8c_ab7b8bc89a97768c880905dd924cd4cff}{count\-\_\-developers} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{DefiniÃ§Ãµes e macros}
+\hypertarget{mod__pers__dev_8c_a4a4774f5abc91a048565226ab2abc817}{\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}!P\-E\-R\-S\-\_\-\-D\-E\-V\-\_\-\-S\-E\-R\-V@{P\-E\-R\-S\-\_\-\-D\-E\-V\-\_\-\-S\-E\-R\-V}}
+\index{P\-E\-R\-S\-\_\-\-D\-E\-V\-\_\-\-S\-E\-R\-V@{P\-E\-R\-S\-\_\-\-D\-E\-V\-\_\-\-S\-E\-R\-V}!mod_pers_dev.c@{mod\-\_\-pers\-\_\-dev.\-c}}
+\subsubsection[{P\-E\-R\-S\-\_\-\-D\-E\-V\-\_\-\-S\-E\-R\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-E\-R\-S\-\_\-\-D\-E\-V\-\_\-\-S\-E\-R\-V}}\label{mod__pers__dev_8c_a4a4774f5abc91a048565226ab2abc817}
+
+
+DefiniÃ§Ã£o na linha 15 do arquivo mod\-\_\-pers\-\_\-dev.\-c.
+
+
+
+\subsection{FunÃ§Ãµes}
+\hypertarget{mod__pers__dev_8c_ab7b8bc89a97768c880905dd924cd4cff}{\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}!count\-\_\-developers@{count\-\_\-developers}}
+\index{count\-\_\-developers@{count\-\_\-developers}!mod_pers_dev.c@{mod\-\_\-pers\-\_\-dev.\-c}}
+\subsubsection[{count\-\_\-developers}]{\setlength{\rightskip}{0pt plus 5cm}int count\-\_\-developers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__dev_8c_ab7b8bc89a97768c880905dd924cd4cff}
+Função para contar o número de desenvolvedores cadastrados. 
+
+DefiniÃ§Ã£o na linha 259 do arquivo mod\-\_\-pers\-\_\-dev.\-c.
+
+\hypertarget{mod__pers__dev_8c_adfa162a1999145030efb7b75e586bf58}{\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}!delete\-\_\-developer@{delete\-\_\-developer}}
+\index{delete\-\_\-developer@{delete\-\_\-developer}!mod_pers_dev.c@{mod\-\_\-pers\-\_\-dev.\-c}}
+\subsubsection[{delete\-\_\-developer}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-\_\-developer (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__dev_8c_adfa162a1999145030efb7b75e586bf58}
+Funcao para remover um desenvolvedor
+
+A função apenas irá mudar o valor de excluido de 0 para 1, do desenvolvedor na posição 'posicao', permitindo que o espaço seja reutilizado para gravação de um novo desenvolvedor, por cima do antigo.
+
+Valor de retorno\-: Retorna 1 no caso de sucesso, E\-R\-R\-O\-R\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S no caso de erro ao abrir o arquivo e um valor diferente de 2 no caso de outro erro. 
+
+DefiniÃ§Ã£o na linha 240 do arquivo mod\-\_\-pers\-\_\-dev.\-c.
+
+\hypertarget{mod__pers__dev_8c_aa861ed0a72b668a0ae437e46b67ff952}{\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}!read\-\_\-developer@{read\-\_\-developer}}
+\index{read\-\_\-developer@{read\-\_\-developer}!mod_pers_dev.c@{mod\-\_\-pers\-\_\-dev.\-c}}
+\subsubsection[{read\-\_\-developer}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-developer (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__dev_8c_aa861ed0a72b668a0ae437e46b67ff952}
+Função para consultar um desenvolvedor
+
+A função receberá uma struct de desenvolvedor que só precisa do email preenchido. Essa struct será preenchida com o restante dos dados caso o desenvolvedor exista. Caso o desenvolvedor não exista, a struct não será alterada.
+
+Valor de retorno\-: Há o retorno do valor da posição do desenvolvedor, se ele existir. Caso não exista será retornado E\-L\-E\-M\-E\-N\-T\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-S\-T, caso exista mas esteja apagado, retorna 0. The total number of elements successfully read is returned. If this number differs from the count parameter, either a reading error occurred or the end-\/of-\/file was reached while reading. In both cases, the proper indicator is set, which can be checked with ferror and feof, respectively. If either size or count is zero, the function returns zero and both the stream state and the content pointed by ptr remain unchanged. size\-\_\-t is an unsigned integral type. 
+
+DefiniÃ§Ã£o na linha 136 do arquivo mod\-\_\-pers\-\_\-dev.\-c.
+
+\hypertarget{mod__pers__dev_8c_a186502f924dd9bc7530caf966e869a1b}{\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}!read\-\_\-developer\-\_\-deleted@{read\-\_\-developer\-\_\-deleted}}
+\index{read\-\_\-developer\-\_\-deleted@{read\-\_\-developer\-\_\-deleted}!mod_pers_dev.c@{mod\-\_\-pers\-\_\-dev.\-c}}
+\subsubsection[{read\-\_\-developer\-\_\-deleted}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-developer\-\_\-deleted (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__dev_8c_a186502f924dd9bc7530caf966e869a1b}
+Função para achar o primeiro desenvolvedor apagado.
+
+Valor de retorno\-: Se houver um desenvolvedor apagado, será retornada a posição desse desenvolvedor. Se não houver nenhum apagado retornará 0. Se houver problema ao abrir o arquivo, retorna E\-R\-R\-O\-R\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S. 
+
+DefiniÃ§Ã£o na linha 179 do arquivo mod\-\_\-pers\-\_\-dev.\-c.
+
+\hypertarget{mod__pers__dev_8c_a2e769ed0a4086f60c86544a595202944}{\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}!register\-\_\-developer@{register\-\_\-developer}}
+\index{register\-\_\-developer@{register\-\_\-developer}!mod_pers_dev.c@{mod\-\_\-pers\-\_\-dev.\-c}}
+\subsubsection[{register\-\_\-developer}]{\setlength{\rightskip}{0pt plus 5cm}int register\-\_\-developer (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__dev_8c_a2e769ed0a4086f60c86544a595202944}
+Função exportada para cadastrar um desenvolvedor.
+
+Cadastra um desenvolvedor fazendo as verificações necessárias, de forma que seja gravado na posição correta do arquivo.
+
+Valor de retorno\-: Retorna o valor de retorno da função write\-\_\-developer. Se o desenvolvedor já existir, retorna E\-L\-E\-M\-E\-N\-T\-\_\-\-E\-X\-I\-S\-T\-S. Se houver erro na função read\-\_\-developer\-\_\-deleted, retornará o erro dela. 
+
+DefiniÃ§Ã£o na linha 83 do arquivo mod\-\_\-pers\-\_\-dev.\-c.
+
+\hypertarget{mod__pers__dev_8c_aa8e5ed39d3d62d4472c11a802e8650c0}{\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}!rewrite\-\_\-developer@{rewrite\-\_\-developer}}
+\index{rewrite\-\_\-developer@{rewrite\-\_\-developer}!mod_pers_dev.c@{mod\-\_\-pers\-\_\-dev.\-c}}
+\subsubsection[{rewrite\-\_\-developer}]{\setlength{\rightskip}{0pt plus 5cm}int rewrite\-\_\-developer (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__dev_8c_aa8e5ed39d3d62d4472c11a802e8650c0}
+Função que vai sobrescrever um desenvolvedor
+
+A função recebe um desenvolvedor, que já existe, e o sobrescreve. A existência, ou não do desenvolvedor, deverá ser checada previamente. Valor de retorno\-: Retorna o valor de retorno da função write\-\_\-developer. 
+
+DefiniÃ§Ã£o na linha 215 do arquivo mod\-\_\-pers\-\_\-dev.\-c.
+
+\hypertarget{mod__pers__dev_8c_a1ba03e31121f4be0aa4d75ebf31fdbde}{\index{mod\-\_\-pers\-\_\-dev.\-c@{mod\-\_\-pers\-\_\-dev.\-c}!write\-\_\-developer@{write\-\_\-developer}}
+\index{write\-\_\-developer@{write\-\_\-developer}!mod_pers_dev.c@{mod\-\_\-pers\-\_\-dev.\-c}}
+\subsubsection[{write\-\_\-developer}]{\setlength{\rightskip}{0pt plus 5cm}int write\-\_\-developer (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf desenvolvedor} $\ast$}]{dev, }
+\item[{size\-\_\-t}]{posicao}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__dev_8c_a1ba03e31121f4be0aa4d75ebf31fdbde}
+Função para escrever um novo desenvolvedor em disco
+
+A função cadastra um novo desenvolvedor no arquivo 'cad\-\_\-devs.\-bin', em formato binário, na posição 'posicao'. Se 'posicao = 0' então o desenvolvedor será gravado no final do arquivo. Não há verificação se o desenvolvedor já existe no arquivo ou não.
+
+Valor de retorno\-: Há o retorno do valor da função fwrite (fseek retorna zero no sucesso)\-: The total number of elements successfully written is returned. If this number differs from the count parameter, a writing error prevented the function from completing. In this case, the error indicator (ferror) will be set for the stream. If either size or count is zero, the function returns zero and the error indicator remains unchanged. size\-\_\-t is an unsigned integral type. 
+
+DefiniÃ§Ã£o na linha 43 do arquivo mod\-\_\-pers\-\_\-dev.\-c.
+

@@ -1,0 +1,155 @@
+\hypertarget{mod__pers__def_8c}{\section{ReferÃªncia do Arquivo mod\-\_\-pers\-\_\-def.\-c}
+\label{mod__pers__def_8c}\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}}
+}
+{\ttfamily \#include \char`\"{}tabela\-\_\-codigos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}i\-\_\-estruturas.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}i\-\_\-mod\-\_\-pers\-\_\-def.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{DefiniÃ§Ãµes e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mod__pers__def_8c_a154a01c577a6d8f7dcb247c904c70eb5}{P\-E\-R\-S\-\_\-\-D\-E\-F\-\_\-\-S\-E\-R\-V}
+\end{DoxyCompactItemize}
+\subsection*{FunÃ§Ãµes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mod__pers__def_8c_ad4b5117c31c8483d8f57ff5f56b6be66}{write\-\_\-defect} (const struct \hyperlink{structdefeito}{defeito} $\ast$bug, size\-\_\-t posicao)
+\item 
+int \hyperlink{mod__pers__def_8c_a095373d6a9646c0534c8761ad7ddd3f0}{read\-\_\-defect} (struct \hyperlink{structdefeito}{defeito} $\ast$bug)
+\item 
+int \hyperlink{mod__pers__def_8c_a394324579037c57999f7378cb9e84bd8}{read\-\_\-defect\-\_\-deleted} (void)
+\item 
+int \hyperlink{mod__pers__def_8c_a869a11f32586ed999dc89dc0dfc9230d}{register\-\_\-defect} (const struct \hyperlink{structdefeito}{defeito} $\ast$bug)
+\item 
+int \hyperlink{mod__pers__def_8c_a04a3545e7799edc4669917aff158d58d}{rewrite\-\_\-defect} (const struct \hyperlink{structdefeito}{defeito} $\ast$bug)
+\item 
+int \hyperlink{mod__pers__def_8c_a96cf66c002a80eaf9fa0d8f1daecfbbf}{delete\-\_\-defect} (struct \hyperlink{structdefeito}{defeito} $\ast$bug)
+\item 
+int \hyperlink{mod__pers__def_8c_ab3173031ba5b80d889ac1ca04adc8178}{count\-\_\-defects} (void)
+\item 
+int \hyperlink{mod__pers__def_8c_acd504f91574cf8173faa58671786eda9}{remove\-\_\-product\-\_\-defects} (char $\ast$cod\-\_\-prod)
+\end{DoxyCompactItemize}
+
+
+\subsection{DefiniÃ§Ãµes e macros}
+\hypertarget{mod__pers__def_8c_a154a01c577a6d8f7dcb247c904c70eb5}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!P\-E\-R\-S\-\_\-\-D\-E\-F\-\_\-\-S\-E\-R\-V@{P\-E\-R\-S\-\_\-\-D\-E\-F\-\_\-\-S\-E\-R\-V}}
+\index{P\-E\-R\-S\-\_\-\-D\-E\-F\-\_\-\-S\-E\-R\-V@{P\-E\-R\-S\-\_\-\-D\-E\-F\-\_\-\-S\-E\-R\-V}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{P\-E\-R\-S\-\_\-\-D\-E\-F\-\_\-\-S\-E\-R\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-E\-R\-S\-\_\-\-D\-E\-F\-\_\-\-S\-E\-R\-V}}\label{mod__pers__def_8c_a154a01c577a6d8f7dcb247c904c70eb5}
+
+
+DefiniÃ§Ã£o na linha 15 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+
+
+
+\subsection{FunÃ§Ãµes}
+\hypertarget{mod__pers__def_8c_ab3173031ba5b80d889ac1ca04adc8178}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!count\-\_\-defects@{count\-\_\-defects}}
+\index{count\-\_\-defects@{count\-\_\-defects}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{count\-\_\-defects}]{\setlength{\rightskip}{0pt plus 5cm}int count\-\_\-defects (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__def_8c_ab3173031ba5b80d889ac1ca04adc8178}
+Função para contar o número de defeitos cadastrados. 
+
+DefiniÃ§Ã£o na linha 259 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+
+\hypertarget{mod__pers__def_8c_a96cf66c002a80eaf9fa0d8f1daecfbbf}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!delete\-\_\-defect@{delete\-\_\-defect}}
+\index{delete\-\_\-defect@{delete\-\_\-defect}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{delete\-\_\-defect}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-\_\-defect (
+\begin{DoxyParamCaption}
+\item[{struct {\bf defeito} $\ast$}]{bug}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__def_8c_a96cf66c002a80eaf9fa0d8f1daecfbbf}
+Funcao para remover um defeito
+
+A função apenas irá mudar o valor de excluido de 0 para 1, do defeito na posição 'posicao', permitindo que o espaço seja reutilizado para gravação de um novo defeito, por cima do antigo.
+
+Valor de retorno\-: Retorna 1 no caso de sucesso, E\-R\-R\-O\-R\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S no caso de erro ao abrir o arquivo e um valor diferente de 2 no caso de outro erro. 
+
+DefiniÃ§Ã£o na linha 239 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+
+\hypertarget{mod__pers__def_8c_a095373d6a9646c0534c8761ad7ddd3f0}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!read\-\_\-defect@{read\-\_\-defect}}
+\index{read\-\_\-defect@{read\-\_\-defect}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{read\-\_\-defect}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-defect (
+\begin{DoxyParamCaption}
+\item[{struct {\bf defeito} $\ast$}]{bug}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__def_8c_a095373d6a9646c0534c8761ad7ddd3f0}
+Função para consultar um defeito
+
+A função receberá uma struct de defeito que só precisa do codigo preenchido. Essa struct será preenchida com o restante dos dados caso o defeito exista. Caso o defeito não exista, a struct não será alterada.
+
+Valor de retorno\-: Há o retorno do valor da posição do defeito, se ele existir. Caso não exista será retornado E\-L\-E\-M\-E\-N\-T\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-S\-T, caso exista mas esteja apagado, retorna 0. The total number of elements successfully read is returned. If this number differs from the count parameter, either a reading error occurred or the end-\/of-\/file was reached while reading. In both cases, the proper indicator is set, which can be checked with ferror and feof, respectively. If either size or count is zero, the function returns zero and both the stream state and the content pointed by ptr remain unchanged. size\-\_\-t is an unsigned integral type. 
+
+DefiniÃ§Ã£o na linha 93 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+
+\hypertarget{mod__pers__def_8c_a394324579037c57999f7378cb9e84bd8}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!read\-\_\-defect\-\_\-deleted@{read\-\_\-defect\-\_\-deleted}}
+\index{read\-\_\-defect\-\_\-deleted@{read\-\_\-defect\-\_\-deleted}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{read\-\_\-defect\-\_\-deleted}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-defect\-\_\-deleted (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__def_8c_a394324579037c57999f7378cb9e84bd8}
+Função para achar o primeiro defeito apagado.
+
+Valor de retorno\-: Se houver um defeito apagado, será retornada a posição desse defeito. Se não houver nenhum apagado retornará 0. Se houver problema ao abrir o arquivo, retorna E\-R\-R\-O\-R\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S. 
+
+DefiniÃ§Ã£o na linha 136 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+
+\hypertarget{mod__pers__def_8c_a869a11f32586ed999dc89dc0dfc9230d}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!register\-\_\-defect@{register\-\_\-defect}}
+\index{register\-\_\-defect@{register\-\_\-defect}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{register\-\_\-defect}]{\setlength{\rightskip}{0pt plus 5cm}int register\-\_\-defect (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf defeito} $\ast$}]{bug}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__def_8c_a869a11f32586ed999dc89dc0dfc9230d}
+Função exportada para cadastrar um defeito.
+
+Cadastra um defeito fazendo as verificações necessárias, de forma que seja gravado na posição correta do arquivo.
+
+Valor de retorno\-: Retorna o valor de retorno da função write\-\_\-defect. Se o defeito já existir, retorna E\-L\-E\-M\-E\-N\-T\-\_\-\-E\-X\-I\-S\-T\-S. 
+
+DefiniÃ§Ã£o na linha 174 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+
+\hypertarget{mod__pers__def_8c_acd504f91574cf8173faa58671786eda9}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!remove\-\_\-product\-\_\-defects@{remove\-\_\-product\-\_\-defects}}
+\index{remove\-\_\-product\-\_\-defects@{remove\-\_\-product\-\_\-defects}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{remove\-\_\-product\-\_\-defects}]{\setlength{\rightskip}{0pt plus 5cm}int remove\-\_\-product\-\_\-defects (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{cod\-\_\-prod}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__def_8c_acd504f91574cf8173faa58671786eda9}
+Função que remove todos os defeitos associados com determinado produto. 
+
+DefiniÃ§Ã£o na linha 287 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+
+\hypertarget{mod__pers__def_8c_a04a3545e7799edc4669917aff158d58d}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!rewrite\-\_\-defect@{rewrite\-\_\-defect}}
+\index{rewrite\-\_\-defect@{rewrite\-\_\-defect}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{rewrite\-\_\-defect}]{\setlength{\rightskip}{0pt plus 5cm}int rewrite\-\_\-defect (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf defeito} $\ast$}]{bug}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__def_8c_a04a3545e7799edc4669917aff158d58d}
+Função que vai sobrescrever um defeito
+
+A função recebe um defeito, que já existe, e o sobrescreve. A existência, ou não do defeito, deverá ser checada previamente. Valor de retorno\-: Retorna o valor de retorno da função write\-\_\-defect. 
+
+DefiniÃ§Ã£o na linha 214 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+
+\hypertarget{mod__pers__def_8c_ad4b5117c31c8483d8f57ff5f56b6be66}{\index{mod\-\_\-pers\-\_\-def.\-c@{mod\-\_\-pers\-\_\-def.\-c}!write\-\_\-defect@{write\-\_\-defect}}
+\index{write\-\_\-defect@{write\-\_\-defect}!mod_pers_def.c@{mod\-\_\-pers\-\_\-def.\-c}}
+\subsubsection[{write\-\_\-defect}]{\setlength{\rightskip}{0pt plus 5cm}int write\-\_\-defect (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf defeito} $\ast$}]{bug, }
+\item[{size\-\_\-t}]{posicao}
+\end{DoxyParamCaption}
+)}}\label{mod__pers__def_8c_ad4b5117c31c8483d8f57ff5f56b6be66}
+Função interna para escrever um novo defeito em disco
+
+A função cadastra um novo defeito no arquivo 'cad\-\_\-bugs.\-bin', em formato binário, na posição 'posicao'. Se 'posicao = 0' então o defeito será gravado no final do arquivo. Não há verificação se o defeito já existe no arquivo ou não.
+
+Valor de retorno\-: Há o retorno do valor da função fwrite (fseek retorna zero no sucesso)\-: The total number of elements successfully written is returned. If this number differs from the count parameter, a writing error prevented the function from completing. In this case, the error indicator (ferror) will be set for the stream. If either size or count is zero, the function returns zero and the error indicator remains unchanged. size\-\_\-t is an unsigned integral type. 
+
+DefiniÃ§Ã£o na linha 43 do arquivo mod\-\_\-pers\-\_\-def.\-c.
+

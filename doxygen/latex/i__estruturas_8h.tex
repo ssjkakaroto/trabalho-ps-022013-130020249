@@ -1,0 +1,117 @@
+\hypertarget{i__estruturas_8h}{\section{Refer√™ncia do Arquivo i\-\_\-estruturas.\-h}
+\label{i__estruturas_8h}\index{i\-\_\-estruturas.\-h@{i\-\_\-estruturas.\-h}}
+}
+{\ttfamily \#include \char`\"{}tabela\-\_\-codigos.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+\subsection*{Estruturas de Dados}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdesenvolvedor}{desenvolvedor}
+\item 
+struct \hyperlink{structproduto}{produto}
+\item 
+struct \hyperlink{structdefeito}{defeito}
+\end{DoxyCompactItemize}
+\subsection*{Defini√ß√µes e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}{E\-X\-T\-\_\-\-S\-T\-R\-T}~extern
+\end{DoxyCompactItemize}
+\subsection*{Fun√ß√µes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}{E\-X\-T\-\_\-\-S\-T\-R\-T} void \hyperlink{i__estruturas_8h_a0ee461010c5630a642fbced4b825cb5c}{get\-\_\-string} (char $\ast$str, size\-\_\-t size)
+\item 
+\hyperlink{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}{E\-X\-T\-\_\-\-S\-T\-R\-T} void \hyperlink{i__estruturas_8h_ac6879087af7dea0111fd108730e54cd2}{get\-\_\-password} (char $\ast$pass, size\-\_\-t size)
+\item 
+\hyperlink{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}{E\-X\-T\-\_\-\-S\-T\-R\-T} int \hyperlink{i__estruturas_8h_ab5d06cb0d1eeab5415f49577a19e3859}{validate\-\_\-email} (const char $\ast$email)
+\item 
+\hyperlink{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}{E\-X\-T\-\_\-\-S\-T\-R\-T} int \hyperlink{i__estruturas_8h_abe3c51645777e7f1a1c62f1c27dc95b0}{validate\-\_\-name} (const char $\ast$nome)
+\item 
+\hyperlink{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}{E\-X\-T\-\_\-\-S\-T\-R\-T} int \hyperlink{i__estruturas_8h_abfe635a96333dfc91b2ecd5cf93c82a7}{validate\-\_\-code} (const char $\ast$cod)
+\item 
+\hyperlink{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}{E\-X\-T\-\_\-\-S\-T\-R\-T} int \hyperlink{i__estruturas_8h_abe46be361affdbe62a6971f3b058ccc2}{validate\-\_\-version} (const char $\ast$versao)
+\end{DoxyCompactItemize}
+
+
+\subsection{Defini√ß√µes e macros}
+\hypertarget{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}{\index{i\-\_\-estruturas.\-h@{i\-\_\-estruturas.\-h}!E\-X\-T\-\_\-\-S\-T\-R\-T@{E\-X\-T\-\_\-\-S\-T\-R\-T}}
+\index{E\-X\-T\-\_\-\-S\-T\-R\-T@{E\-X\-T\-\_\-\-S\-T\-R\-T}!i_estruturas.h@{i\-\_\-estruturas.\-h}}
+\subsubsection[{E\-X\-T\-\_\-\-S\-T\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-T\-\_\-\-S\-T\-R\-T~extern}}\label{i__estruturas_8h_a36fcb7919572c4545d662709073b0c64}
+
+
+Defini√ß√£o na linha 21 do arquivo i\-\_\-estruturas.\-h.
+
+
+
+\subsection{Fun√ß√µes}
+\hypertarget{i__estruturas_8h_ac6879087af7dea0111fd108730e54cd2}{\index{i\-\_\-estruturas.\-h@{i\-\_\-estruturas.\-h}!get\-\_\-password@{get\-\_\-password}}
+\index{get\-\_\-password@{get\-\_\-password}!i_estruturas.h@{i\-\_\-estruturas.\-h}}
+\subsubsection[{get\-\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-X\-T\-\_\-\-S\-T\-R\-T} void get\-\_\-password (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pass, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{i__estruturas_8h_ac6879087af7dea0111fd108730e54cd2}
+FunÁ„o auxiliar para capturar senhas, que recebe a string da senha e o tamanho da senha. O ˙ltimo caracter ser· sempre '\textbackslash{}0', por isso o tamanho m·ximo da senha È (size -\/ 1) N„o da echo dos caracteres e termina automaticamente quando chega no tamanho (size -\/ 1). 
+
+Defini√ß√£o na linha 53 do arquivo estruturas.\-c.
+
+\hypertarget{i__estruturas_8h_a0ee461010c5630a642fbced4b825cb5c}{\index{i\-\_\-estruturas.\-h@{i\-\_\-estruturas.\-h}!get\-\_\-string@{get\-\_\-string}}
+\index{get\-\_\-string@{get\-\_\-string}!i_estruturas.h@{i\-\_\-estruturas.\-h}}
+\subsubsection[{get\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-X\-T\-\_\-\-S\-T\-R\-T} void get\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{i__estruturas_8h_a0ee461010c5630a642fbced4b825cb5c}
+FunÁ„o auxiliar para capturar strings, que recebe a string e seu tamanho. O ˙ltimo caracter ser· sempre '\textbackslash{}0'. 
+
+Defini√ß√£o na linha 28 do arquivo estruturas.\-c.
+
+\hypertarget{i__estruturas_8h_abfe635a96333dfc91b2ecd5cf93c82a7}{\index{i\-\_\-estruturas.\-h@{i\-\_\-estruturas.\-h}!validate\-\_\-code@{validate\-\_\-code}}
+\index{validate\-\_\-code@{validate\-\_\-code}!i_estruturas.h@{i\-\_\-estruturas.\-h}}
+\subsubsection[{validate\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-X\-T\-\_\-\-S\-T\-R\-T} int validate\-\_\-code (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cod}
+\end{DoxyParamCaption}
+)}}\label{i__estruturas_8h_abfe635a96333dfc91b2ecd5cf93c82a7}
+
+
+Defini√ß√£o na linha 119 do arquivo estruturas.\-c.
+
+\hypertarget{i__estruturas_8h_ab5d06cb0d1eeab5415f49577a19e3859}{\index{i\-\_\-estruturas.\-h@{i\-\_\-estruturas.\-h}!validate\-\_\-email@{validate\-\_\-email}}
+\index{validate\-\_\-email@{validate\-\_\-email}!i_estruturas.h@{i\-\_\-estruturas.\-h}}
+\subsubsection[{validate\-\_\-email}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-X\-T\-\_\-\-S\-T\-R\-T} int validate\-\_\-email (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{email}
+\end{DoxyParamCaption}
+)}}\label{i__estruturas_8h_ab5d06cb0d1eeab5415f49577a19e3859}
+FunÁ„o que faz a validaÁ„o b·sica do formato do email. N„o permite que o caracter digitado no email seja menor que 32 (espaÁo) ou maior que 126 ($\sim$), nem que seja igual aos caracteres proibidos pelo R\-F\-C 822.
+
+Valor de retorno\-: S\-U\-C\-C\-E\-S\-S se o email for valido e I\-N\-V\-A\-L\-I\-D\-\_\-\-E\-M\-A\-I\-L se for invalido. 
+
+Defini√ß√£o na linha 77 do arquivo estruturas.\-c.
+
+\hypertarget{i__estruturas_8h_abe3c51645777e7f1a1c62f1c27dc95b0}{\index{i\-\_\-estruturas.\-h@{i\-\_\-estruturas.\-h}!validate\-\_\-name@{validate\-\_\-name}}
+\index{validate\-\_\-name@{validate\-\_\-name}!i_estruturas.h@{i\-\_\-estruturas.\-h}}
+\subsubsection[{validate\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-X\-T\-\_\-\-S\-T\-R\-T} int validate\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{nome}
+\end{DoxyParamCaption}
+)}}\label{i__estruturas_8h_abe3c51645777e7f1a1c62f1c27dc95b0}
+
+
+Defini√ß√£o na linha 106 do arquivo estruturas.\-c.
+
+\hypertarget{i__estruturas_8h_abe46be361affdbe62a6971f3b058ccc2}{\index{i\-\_\-estruturas.\-h@{i\-\_\-estruturas.\-h}!validate\-\_\-version@{validate\-\_\-version}}
+\index{validate\-\_\-version@{validate\-\_\-version}!i_estruturas.h@{i\-\_\-estruturas.\-h}}
+\subsubsection[{validate\-\_\-version}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-X\-T\-\_\-\-S\-T\-R\-T} int validate\-\_\-version (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{versao}
+\end{DoxyParamCaption}
+)}}\label{i__estruturas_8h_abe46be361affdbe62a6971f3b058ccc2}
+
+
+Defini√ß√£o na linha 132 do arquivo estruturas.\-c.
+

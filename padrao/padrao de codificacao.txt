@@ -1,3 +1,21 @@
+/*
+ *******************************************************************************
+ * Universidade de Brasília
+ * Instituto de Ciências Exatas
+ * Departamento de Ciência da Computação
+ * Matéria: Programação Sistemática
+ * Professor: Fernando Albuquerque
+ * Aluno: Aaron Sue
+ * Matrícula: 13/0020249
+ * Trabalho Prático
+ * Padrão de codificação
+ *******************************************************************************
+ */
+
+Adotou-se o padrão utilizado para a codificação do Kernel do Linux (disponível
+em https://www.kernel.org/doc/Documentation/CodingStyle), com a
+diferença que se utilizou tabs de 4 caracteres.
+
 
 		Linux kernel coding style
 

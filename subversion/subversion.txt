@@ -1,0 +1,22 @@
+/*
+ *******************************************************************************
+ * Universidade de Brasília
+ * Instituto de Ciências Exatas
+ * Departamento de Ciência da Computação
+ * Matéria: Programação Sistemática
+ * Professor: Fernando Albuquerque
+ * Aluno: Aaron Sue
+ * Matrícula: 13/0020249
+ * Trabalho Prático
+ * Comprovação do uso da ferramenta subversion
+ *******************************************************************************
+ */
+
+Todo o presente trabalho se encontra disponível no site:
+https://code.google.com/p/trabalho-ps-022013-130020249/
+
+O log de alterações, com as respectivas datas, podem ser obtidas em:
+https://code.google.com/p/trabalho-ps-022013-130020249/source/list
+
+O checkout pode ser feito com o seguinte comando
+svn checkout http://trabalho-ps-022013-130020249.googlecode.com/svn/trunk/ trabalho-ps-022013-130020249-read-only

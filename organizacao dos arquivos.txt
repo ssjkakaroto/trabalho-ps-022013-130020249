@@ -1,0 +1,33 @@
+/*
+ *******************************************************************************
+ * Universidade de Brasília
+ * Instituto de Ciências Exatas
+ * Departamento de Ciência da Computação
+ * Matéria: Programação Sistemática
+ * Professor: Fernando Albuquerque
+ * Aluno: Aaron Sue
+ * Matrícula: 13/0020249
+ * Trabalho Prático
+ * Organização dos arquivos
+ *******************************************************************************
+ */
+ 
+Os arquivos estão organizados da seguinte maneira:
+	- As interfaces possuem prefixo "i_", que vem antes de outros prefixos
+	- Os módulos possuem prefixo "mod_"
+	- Headers tem o mesmo nome que o arquivo .c, quando este existir, e possuem
+	a extensão .h
+	- Todos os arquivos de codificação (.h e .c) se encontram no mesmo diretório
+	raiz
+	- Os arquivos complementares se encontrar em subdiretórios
+		1) Padrão de codificação: diretório "padrao"
+		2) Formulários e planejamento: diretório "planejamento"
+		3) Documentação: diretório "documentacao"
+		4) Smoke test: diretório "smoke test"
+		5) Comprovação do uso do subversion: "subversion"
+		6) Documentação gerada pela ferramenta Doxygen: "doxygen"
+	- Nos subdiretórios encontram-se os arquivos originais e em formato PDF
+	- O sistema gera no mesmo diretório do arquivo executável os arquivos:
+		1) cad_bugs.bin: Banco de dados de defeitos
+		2) cad_devs.bin: Banco de dados de desenvolvedores
+		3) cad_prods.bin: Banco de dados de produtos
