@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Trabalho PS: CÃ³digo-Fonte de i_mod_log_neg.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho PS
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Estruturas&#160;de&#160;Dados</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('i__mod__log__neg_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estruturas de Dados</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Arquivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>FunÃ§Ãµes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>VariÃ¡veis</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>DefiniÃ§Ãµes e Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">i_mod_log_neg.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="i__mod__log__neg_8h.html">VÃ¡ para a documentaÃ§Ã£o deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *******************************************************************************</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Universidade de Brasília</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Instituto de Ciências Exatas</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Departamento de Ciência da Computação</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Matéria: Programação Sistemática</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Professor: Fernando Albuquerque</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Aluno: Aaron Sue</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Matrícula: 13/0020249</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Trabalho Prático</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Interface do módulo de lógica do negócio</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *******************************************************************************</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef LOG_NEG</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LOG_NEG</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef LOGICA_NEGOCIO_SERV</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define EXT_LGNG</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">   21</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define EXT_LGNG extern</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tabela__codigos_8h.html">tabela_codigos.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="i__estruturas_8h.html">i_estruturas.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#ae215d941a53dd5366108a0f94d897518">check_login</a>(<span class="keyword">struct</span> <a class="code" href="structdesenvolvedor.html">desenvolvedor</a> *dev);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#a105129cf22f22606c2c76c81471f4d44">register_new_developer</a>(<span class="keyword">struct</span> <a class="code" href="structdesenvolvedor.html">desenvolvedor</a> *dev);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#af7906203095fa244bf43ceaf1fb20b29">number_of_developers</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#aa794f6547f511a2b583fad06fbca05f7">load_developer</a>(<span class="keyword">struct</span> <a class="code" href="structdesenvolvedor.html">desenvolvedor</a> *dev);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#a74d1386c7713efb070396a0428cd3473">overwrite_developer</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structdesenvolvedor.html">desenvolvedor</a> *dev);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#a0c8912bdbddf8d69122e8b2fb2904262">remove_developer</a>(<span class="keyword">struct</span> <a class="code" href="structdesenvolvedor.html">desenvolvedor</a> *dev);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#af902e7095aa9b4647ffaba824ed5d2ed">return_profile</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structdesenvolvedor.html">desenvolvedor</a> *dev);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#aa124e2af623d43032a29508b44f744a4">assign_new_project_leader</a>(<span class="keyword">struct</span> <a class="code" href="structdesenvolvedor.html">desenvolvedor</a> *dev,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *dev_email);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#a1f2be8207ffbd89fd32986ed18c492e8">register_new_product</a>(<span class="keyword">struct</span> <a class="code" href="structproduto.html">produto</a> *prod);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#ac45d85ebaf8914498b58f8e1cb3b1b49">load_product</a>(<span class="keyword">struct</span> <a class="code" href="structproduto.html">produto</a> *prod);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#aeabcb77a2658ff54fbca2948f601aabe">overwrite_product</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structproduto.html">produto</a> *prod);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#aceab3de9ac964c60a0292cfbe8b6e5a7">remove_product</a>(<span class="keyword">struct</span> <a class="code" href="structproduto.html">produto</a> *prod);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#afa2f7c25216a2cffab2b0562c3f36df1">assign_product_leader</a>(<span class="keywordtype">char</span> *dev_email, <span class="keywordtype">char</span> *prod_cod);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#ad80d0bdc108298fe40beb254d645978c">register_new_defect</a>(<span class="keyword">struct</span> <a class="code" href="structdefeito.html">defeito</a> *bug);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#abedbc268eab691f9746c544972fa18b6">load_defect</a>(<span class="keyword">struct</span> <a class="code" href="structdefeito.html">defeito</a> *bug);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#af14c57f1fdf11c8e9f7e9c91c502681c">overwrite_defect</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structdefeito.html">defeito</a> *bug);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#ac6ec6753510e605aca3cafdd39f4c703">associate_defect</a>(<span class="keyword">struct</span> <a class="code" href="structdesenvolvedor.html">desenvolvedor</a> *dev, <span class="keywordtype">char</span> *cod_def);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<a class="code" href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a> <span class="keywordtype">int</span> <a class="code" href="i__mod__log__neg_8h.html#a08248314abd5cc6d2675189dd3cda926">assign_defect_to_developer</a>(<span class="keywordtype">char</span> *dev_email, <span class="keywordtype">char</span> *def_cod);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_a105129cf22f22606c2c76c81471f4d44"><div class="ttname"><a href="i__mod__log__neg_8h.html#a105129cf22f22606c2c76c81471f4d44">register_new_developer</a></div><div class="ttdeci">EXT_LGNG int register_new_developer(struct desenvolvedor *dev)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00064">mod_log_neg.c:64</a></div></div>
+<div class="ttc" id="i__estruturas_8h_html"><div class="ttname"><a href="i__estruturas_8h.html">i_estruturas.h</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_af14c57f1fdf11c8e9f7e9c91c502681c"><div class="ttname"><a href="i__mod__log__neg_8h.html#af14c57f1fdf11c8e9f7e9c91c502681c">overwrite_defect</a></div><div class="ttdeci">EXT_LGNG int overwrite_defect(const struct defeito *bug)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00355">mod_log_neg.c:355</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_a1f2be8207ffbd89fd32986ed18c492e8"><div class="ttname"><a href="i__mod__log__neg_8h.html#a1f2be8207ffbd89fd32986ed18c492e8">register_new_product</a></div><div class="ttdeci">EXT_LGNG int register_new_product(struct produto *prod)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00196">mod_log_neg.c:196</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_ac6ec6753510e605aca3cafdd39f4c703"><div class="ttname"><a href="i__mod__log__neg_8h.html#ac6ec6753510e605aca3cafdd39f4c703">associate_defect</a></div><div class="ttdeci">EXT_LGNG int associate_defect(struct desenvolvedor *dev, char *cod_def)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00364">mod_log_neg.c:364</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_af902e7095aa9b4647ffaba824ed5d2ed"><div class="ttname"><a href="i__mod__log__neg_8h.html#af902e7095aa9b4647ffaba824ed5d2ed">return_profile</a></div><div class="ttdeci">EXT_LGNG int return_profile(const struct desenvolvedor *dev)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00176">mod_log_neg.c:176</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_aa794f6547f511a2b583fad06fbca05f7"><div class="ttname"><a href="i__mod__log__neg_8h.html#aa794f6547f511a2b583fad06fbca05f7">load_developer</a></div><div class="ttdeci">EXT_LGNG int load_developer(struct desenvolvedor *dev)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00102">mod_log_neg.c:102</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_a08248314abd5cc6d2675189dd3cda926"><div class="ttname"><a href="i__mod__log__neg_8h.html#a08248314abd5cc6d2675189dd3cda926">assign_defect_to_developer</a></div><div class="ttdeci">EXT_LGNG int assign_defect_to_developer(char *dev_email, char *def_cod)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00397">mod_log_neg.c:397</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_a0c8912bdbddf8d69122e8b2fb2904262"><div class="ttname"><a href="i__mod__log__neg_8h.html#a0c8912bdbddf8d69122e8b2fb2904262">remove_developer</a></div><div class="ttdeci">EXT_LGNG int remove_developer(struct desenvolvedor *dev)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00128">mod_log_neg.c:128</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_a74d1386c7713efb070396a0428cd3473"><div class="ttname"><a href="i__mod__log__neg_8h.html#a74d1386c7713efb070396a0428cd3473">overwrite_developer</a></div><div class="ttdeci">EXT_LGNG int overwrite_developer(const struct desenvolvedor *dev)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00118">mod_log_neg.c:118</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_af7906203095fa244bf43ceaf1fb20b29"><div class="ttname"><a href="i__mod__log__neg_8h.html#af7906203095fa244bf43ceaf1fb20b29">number_of_developers</a></div><div class="ttdeci">EXT_LGNG int number_of_developers(void)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00092">mod_log_neg.c:92</a></div></div>
+<div class="ttc" id="structdefeito_html"><div class="ttname"><a href="structdefeito.html">defeito</a></div><div class="ttdef"><b>Definition:</b> <a href="i__estruturas_8h_source.html#l00086">i_estruturas.h:86</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_ac45d85ebaf8914498b58f8e1cb3b1b49"><div class="ttname"><a href="i__mod__log__neg_8h.html#ac45d85ebaf8914498b58f8e1cb3b1b49">load_product</a></div><div class="ttdeci">EXT_LGNG int load_product(struct produto *prod)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00213">mod_log_neg.c:213</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_afa2f7c25216a2cffab2b0562c3f36df1"><div class="ttname"><a href="i__mod__log__neg_8h.html#afa2f7c25216a2cffab2b0562c3f36df1">assign_product_leader</a></div><div class="ttdeci">EXT_LGNG int assign_product_leader(char *dev_email, char *prod_cod)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00264">mod_log_neg.c:264</a></div></div>
+<div class="ttc" id="structdesenvolvedor_html"><div class="ttname"><a href="structdesenvolvedor.html">desenvolvedor</a></div><div class="ttdef"><b>Definition:</b> <a href="i__estruturas_8h_source.html#l00041">i_estruturas.h:41</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_ae215d941a53dd5366108a0f94d897518"><div class="ttname"><a href="i__mod__log__neg_8h.html#ae215d941a53dd5366108a0f94d897518">check_login</a></div><div class="ttdeci">EXT_LGNG int check_login(struct desenvolvedor *dev)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00040">mod_log_neg.c:40</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_ad80d0bdc108298fe40beb254d645978c"><div class="ttname"><a href="i__mod__log__neg_8h.html#ad80d0bdc108298fe40beb254d645978c">register_new_defect</a></div><div class="ttdeci">EXT_LGNG int register_new_defect(struct defeito *bug)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00304">mod_log_neg.c:304</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_abedbc268eab691f9746c544972fa18b6"><div class="ttname"><a href="i__mod__log__neg_8h.html#abedbc268eab691f9746c544972fa18b6">load_defect</a></div><div class="ttdeci">EXT_LGNG int load_defect(struct defeito *bug)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00339">mod_log_neg.c:339</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_aac5cd37becd9d9d352ec8a26cb608ed4"><div class="ttname"><a href="i__mod__log__neg_8h.html#aac5cd37becd9d9d352ec8a26cb608ed4">EXT_LGNG</a></div><div class="ttdeci">#define EXT_LGNG</div><div class="ttdef"><b>Definition:</b> <a href="i__mod__log__neg_8h_source.html#l00021">i_mod_log_neg.h:21</a></div></div>
+<div class="ttc" id="structproduto_html"><div class="ttname"><a href="structproduto.html">produto</a></div><div class="ttdef"><b>Definition:</b> <a href="i__estruturas_8h_source.html#l00064">i_estruturas.h:64</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_aa124e2af623d43032a29508b44f744a4"><div class="ttname"><a href="i__mod__log__neg_8h.html#aa124e2af623d43032a29508b44f744a4">assign_new_project_leader</a></div><div class="ttdeci">EXT_LGNG int assign_new_project_leader(struct desenvolvedor *dev, const char *dev_email)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00155">mod_log_neg.c:155</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_aeabcb77a2658ff54fbca2948f601aabe"><div class="ttname"><a href="i__mod__log__neg_8h.html#aeabcb77a2658ff54fbca2948f601aabe">overwrite_product</a></div><div class="ttdeci">EXT_LGNG int overwrite_product(const struct produto *prod)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00229">mod_log_neg.c:229</a></div></div>
+<div class="ttc" id="i__mod__log__neg_8h_html_aceab3de9ac964c60a0292cfbe8b6e5a7"><div class="ttname"><a href="i__mod__log__neg_8h.html#aceab3de9ac964c60a0292cfbe8b6e5a7">remove_product</a></div><div class="ttdeci">EXT_LGNG int remove_product(struct produto *prod)</div><div class="ttdef"><b>Definition:</b> <a href="mod__log__neg_8c_source.html#l00240">mod_log_neg.c:240</a></div></div>
+<div class="ttc" id="tabela__codigos_8h_html"><div class="ttname"><a href="tabela__codigos_8h.html">tabela_codigos.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="i__mod__log__neg_8h.html">i_mod_log_neg.h</a></li>
+    <li class="footer">Gerado em SÃ¡bado, 23 de Novembro de 2013 19:28:08 para Trabalho PS por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
+</body>
+</html>

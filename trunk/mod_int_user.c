@@ -182,7 +182,10 @@ void print_new_developer_registration(void)
 	}
 }
 
-
+/**
+ * Função chamada para registrar um novo produto.
+ * Os dados do produto são informados pelo usuário.
+ */
 void print_new_product_registration(void)
 {
 	struct produto prod;
@@ -230,7 +233,10 @@ void print_new_product_registration(void)
 		print_error(verif);
 }
 
-
+/**
+ * Função chamada para registrar um novo defeito.
+ * Os dados do defeito são informados pelo usuário.
+ */
 void print_new_defect_registration(void)
 {
 	struct defeito bug;
@@ -300,12 +306,17 @@ void login_successful(struct desenvolvedor *dev)
  * -Cadastrar defeito
  * -Votar em defeito
  * -Apagar conta
+ * -Imprimir desenvolvedor (que está atualmente logado)
+ * -Imprimir produto
+ * -Imprimir defeito
  *
  * Lider de projeto:
  * -Cadastrar produtos
  * -Editar produtos
  * -Indicar lider de produto
  * -Descontinuar produto
+ * -Escolher responsavel para solucionar defeitos
+ * -Alterar status do defeito (reparado -> encerrado ou reparado -> confirmado)
  *
  * Lider de produto:
  * -Escolher responsavel para solucionar defeitos
@@ -348,7 +359,9 @@ void print_logged_menu(struct desenvolvedor *dev, int perfil)
 	} while (loop != 666);
 }
 
-
+/**
+ * Menu comum a todos desenvolvedores
+ */
 void print_common_menu(void)
 {
 	printf("1) Alterar nome\n");
@@ -361,7 +374,9 @@ void print_common_menu(void)
 	printf("8) Imprimir produto\n");
 }
 
-
+/**
+ * Menu para líder de projeto
+ */
 void print_project_leader_menu(void)
 {
 	printf("101) Cadastrar produto\n");
@@ -373,7 +388,9 @@ void print_project_leader_menu(void)
 	printf("666) Sair\n");
 }
 
-
+/**
+ * Menu para líder de produto
+ */
 void print_product_leader_menu(void)
 {
 	printf("201) Indicar desenvolvedor para solucionar defeito\n");
@@ -381,19 +398,28 @@ void print_product_leader_menu(void)
 	printf("666) Sair\n");
 }
 
+/**
+ * Menu para desenvolvedor que não seja líder
+ */
 void print_non_leader_menu(void)
 {
 	printf("401) Candidatar-se para solucionar defeito\n");
 	printf("666) Sair\n");
 }
 
-
+/**
+ * Menu para desenvolvedor que esteja designado para solucionar um defeito
+ */
 void print_assigned_to_bug_menu(void)
 {
 	printf("301) Alterar status de defeito\n");
 }
 
 
+/**
+ * Função que passa a opção escolhida com os dados desenvolvedor, opção e
+ * perfil do desenvolvedor.
+ */
 int load_option(struct desenvolvedor *dev, size_t perfil)
 {
 	size_t opcao;
@@ -408,6 +434,10 @@ int load_option(struct desenvolvedor *dev, size_t perfil)
 }
 
 
+/**
+ * Função que irá carregar a opção escolhida de acordo com o perfil do
+ * desenvolvedor
+ */
 void process_option(struct desenvolvedor *dev, size_t opcao, int perfil)
 {
 	int check;
@@ -721,6 +751,9 @@ void load_option_5(void)
 }
 
 
+/**
+ * Opção 6: Imprimir desenvolvedor
+ */
 void load_option_6(const struct desenvolvedor *dev)
 {
 	system("cls");
@@ -729,6 +762,9 @@ void load_option_6(const struct desenvolvedor *dev)
 }
 
 
+/**
+ * Opção 7: Imprimir defeito
+ */
 void load_option_7(void)
 {
 	struct defeito bugtmp;
@@ -742,6 +778,10 @@ void load_option_7(void)
 }
 
 
+
+/**
+ * Opção 8: Imprimir produto
+ */
 void load_option_8(void)
 {
 	struct produto prodtmp;
@@ -1091,6 +1131,9 @@ void load_option_401(struct desenvolvedor *dev)
 }
 
 
+/**
+ * Função que imprime na tela os dados do desenvolvedor passado
+ */
 void print_developer(const struct desenvolvedor *dev)
 {
 	printf("Nome: %s\n", dev->nome);
@@ -1105,6 +1148,10 @@ void print_developer(const struct desenvolvedor *dev)
 	printf("Defeito solucionando: %s\n", dev->def);
 }
 
+
+/**
+ * Função que imprime na tela os dados do produto passado
+ */
 void print_product(const struct produto *prod)
 {
 	printf("Codigo: %s\n", prod->cod);
@@ -1113,6 +1160,10 @@ void print_product(const struct produto *prod)
 	printf("Lider: %s\n", prod->lider);
 }
 
+
+/**
+ * Função que imprime na tela os dados do defeito passado
+ */
 void print_defect(const struct defeito *bug)
 {
 	printf("Codigo: %s\n", bug->cod);
@@ -1125,6 +1176,11 @@ void print_defect(const struct defeito *bug)
 	printf("Votos: %d\n", bug->votos);
 }
 
+
+/**
+ * Função que imprime na tela a mensagem de erro correspondente com o código de
+ * erro recebido
+ */
 void print_error(int erro)
 {
 	switch (erro) {

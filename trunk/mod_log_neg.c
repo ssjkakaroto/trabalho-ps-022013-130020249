@@ -233,8 +233,9 @@ int overwrite_product(const struct produto *prod)
 
 
 /**
- * Função que remove um produto do banco de dados, delegando para o módulo
- * de persistência.
+ * Função que remove um produto do banco de dados, fazendo o decremento do
+ * número total de liderança de produtos que o desenvolvedor líder desse produto
+ * é.
  */
 int remove_product(struct produto *prod)
 {

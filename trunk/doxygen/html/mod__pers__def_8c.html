@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Trabalho PS: ReferÃªncia do Arquivo mod_pers_def.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho PS
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Estruturas&#160;de&#160;Dados</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('mod__pers__def_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estruturas de Dados</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Arquivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>FunÃ§Ãµes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>VariÃ¡veis</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>DefiniÃ§Ãµes e Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">DefiniÃ§Ãµes e Macros</a> &#124;
+<a href="#func-members">FunÃ§Ãµes</a>  </div>
+  <div class="headertitle">
+<div class="title">ReferÃªncia do Arquivo mod_pers_def.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="tabela__codigos_8h_source.html">tabela_codigos.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="i__estruturas_8h_source.html">i_estruturas.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="i__mod__pers__def_8h_source.html">i_mod_pers_def.h</a>&quot;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdint.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+</div>
+<p><a href="mod__pers__def_8c_source.html">VÃ¡ para o cÃ³digo-fonte deste arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+DefiniÃ§Ãµes e Macros</h2></td></tr>
+<tr class="memitem:a154a01c577a6d8f7dcb247c904c70eb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#a154a01c577a6d8f7dcb247c904c70eb5">PERS_DEF_SERV</a></td></tr>
+<tr class="separator:a154a01c577a6d8f7dcb247c904c70eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+FunÃ§Ãµes</h2></td></tr>
+<tr class="memitem:ad4b5117c31c8483d8f57ff5f56b6be66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#ad4b5117c31c8483d8f57ff5f56b6be66">write_defect</a> (const struct <a class="el" href="structdefeito.html">defeito</a> *bug, size_t posicao)</td></tr>
+<tr class="separator:ad4b5117c31c8483d8f57ff5f56b6be66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095373d6a9646c0534c8761ad7ddd3f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#a095373d6a9646c0534c8761ad7ddd3f0">read_defect</a> (struct <a class="el" href="structdefeito.html">defeito</a> *bug)</td></tr>
+<tr class="separator:a095373d6a9646c0534c8761ad7ddd3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a394324579037c57999f7378cb9e84bd8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#a394324579037c57999f7378cb9e84bd8">read_defect_deleted</a> (void)</td></tr>
+<tr class="separator:a394324579037c57999f7378cb9e84bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a869a11f32586ed999dc89dc0dfc9230d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#a869a11f32586ed999dc89dc0dfc9230d">register_defect</a> (const struct <a class="el" href="structdefeito.html">defeito</a> *bug)</td></tr>
+<tr class="separator:a869a11f32586ed999dc89dc0dfc9230d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a3545e7799edc4669917aff158d58d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#a04a3545e7799edc4669917aff158d58d">rewrite_defect</a> (const struct <a class="el" href="structdefeito.html">defeito</a> *bug)</td></tr>
+<tr class="separator:a04a3545e7799edc4669917aff158d58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96cf66c002a80eaf9fa0d8f1daecfbbf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#a96cf66c002a80eaf9fa0d8f1daecfbbf">delete_defect</a> (struct <a class="el" href="structdefeito.html">defeito</a> *bug)</td></tr>
+<tr class="separator:a96cf66c002a80eaf9fa0d8f1daecfbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3173031ba5b80d889ac1ca04adc8178"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#ab3173031ba5b80d889ac1ca04adc8178">count_defects</a> (void)</td></tr>
+<tr class="separator:ab3173031ba5b80d889ac1ca04adc8178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd504f91574cf8173faa58671786eda9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__pers__def_8c.html#acd504f91574cf8173faa58671786eda9">remove_product_defects</a> (char *cod_prod)</td></tr>
+<tr class="separator:acd504f91574cf8173faa58671786eda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">DefiniÃ§Ãµes e macros</h2>
+<a class="anchor" id="a154a01c577a6d8f7dcb247c904c70eb5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERS_DEF_SERV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00015">15</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">FunÃ§Ãµes</h2>
+<a class="anchor" id="ab3173031ba5b80d889ac1ca04adc8178"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int count_defects </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função para contar o número de defeitos cadastrados. </p>
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00259">259</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96cf66c002a80eaf9fa0d8f1daecfbbf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int delete_defect </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structdefeito.html">defeito</a> *&#160;</td>
+          <td class="paramname"><em>bug</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funcao para remover um defeito</p>
+<p>A função apenas irá mudar o valor de excluido de 0 para 1, do defeito na posição 'posicao', permitindo que o espaço seja reutilizado para gravação de um novo defeito, por cima do antigo.</p>
+<p>Valor de retorno: Retorna 1 no caso de sucesso, ERROR_FILE_ACCESS no caso de erro ao abrir o arquivo e um valor diferente de 2 no caso de outro erro. </p>
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00239">239</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a095373d6a9646c0534c8761ad7ddd3f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_defect </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structdefeito.html">defeito</a> *&#160;</td>
+          <td class="paramname"><em>bug</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função para consultar um defeito</p>
+<p>A função receberá uma struct de defeito que só precisa do codigo preenchido. Essa struct será preenchida com o restante dos dados caso o defeito exista. Caso o defeito não exista, a struct não será alterada.</p>
+<p>Valor de retorno: Há o retorno do valor da posição do defeito, se ele existir. Caso não exista será retornado ELEMENT_NOT_EXIST, caso exista mas esteja apagado, retorna 0. The total number of elements successfully read is returned. If this number differs from the count parameter, either a reading error occurred or the end-of-file was reached while reading. In both cases, the proper indicator is set, which can be checked with ferror and feof, respectively. If either size or count is zero, the function returns zero and both the stream state and the content pointed by ptr remain unchanged. size_t is an unsigned integral type. </p>
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00093">93</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a394324579037c57999f7378cb9e84bd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_defect_deleted </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função para achar o primeiro defeito apagado.</p>
+<p>Valor de retorno: Se houver um defeito apagado, será retornada a posição desse defeito. Se não houver nenhum apagado retornará 0. Se houver problema ao abrir o arquivo, retorna ERROR_FILE_ACCESS. </p>
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00136">136</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a869a11f32586ed999dc89dc0dfc9230d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int register_defect </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structdefeito.html">defeito</a> *&#160;</td>
+          <td class="paramname"><em>bug</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função exportada para cadastrar um defeito.</p>
+<p>Cadastra um defeito fazendo as verificações necessárias, de forma que seja gravado na posição correta do arquivo.</p>
+<p>Valor de retorno: Retorna o valor de retorno da função write_defect. Se o defeito já existir, retorna ELEMENT_EXISTS. </p>
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00174">174</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd504f91574cf8173faa58671786eda9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int remove_product_defects </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cod_prod</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função que remove todos os defeitos associados com determinado produto. </p>
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00287">287</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04a3545e7799edc4669917aff158d58d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rewrite_defect </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structdefeito.html">defeito</a> *&#160;</td>
+          <td class="paramname"><em>bug</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função que vai sobrescrever um defeito</p>
+<p>A função recebe um defeito, que já existe, e o sobrescreve. A existência, ou não do defeito, deverá ser checada previamente. Valor de retorno: Retorna o valor de retorno da função write_defect. </p>
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00214">214</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4b5117c31c8483d8f57ff5f56b6be66"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int write_defect </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structdefeito.html">defeito</a> *&#160;</td>
+          <td class="paramname"><em>bug</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>posicao</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função interna para escrever um novo defeito em disco</p>
+<p>A função cadastra um novo defeito no arquivo 'cad_bugs.bin', em formato binário, na posição 'posicao'. Se 'posicao = 0' então o defeito será gravado no final do arquivo. Não há verificação se o defeito já existe no arquivo ou não.</p>
+<p>Valor de retorno: Há o retorno do valor da função fwrite (fseek retorna zero no sucesso): The total number of elements successfully written is returned. If this number differs from the count parameter, a writing error prevented the function from completing. In this case, the error indicator (ferror) will be set for the stream. If either size or count is zero, the function returns zero and the error indicator remains unchanged. size_t is an unsigned integral type. </p>
+
+<p>DefiniÃ§Ã£o na linha <a class="el" href="mod__pers__def_8c_source.html#l00043">43</a> do arquivo <a class="el" href="mod__pers__def_8c_source.html">mod_pers_def.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="mod__pers__def_8c.html">mod_pers_def.c</a></li>
+    <li class="footer">Gerado em SÃ¡bado, 23 de Novembro de 2013 19:28:08 para Trabalho PS por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
+</body>
+</html>

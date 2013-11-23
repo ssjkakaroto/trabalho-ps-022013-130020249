@@ -1,0 +1,502 @@
+\hypertarget{mod__int__user_8c}{\section{ReferÃªncia do Arquivo mod\-\_\-int\-\_\-user.\-c}
+\label{mod__int__user_8c}\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}}
+}
+{\ttfamily \#include \char`\"{}tabela\-\_\-codigos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}i\-\_\-estruturas.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}i\-\_\-mod\-\_\-log\-\_\-neg.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mod\-\_\-int\-\_\-user.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+\subsection*{FunÃ§Ãµes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mod__int__user_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\item 
+void \hyperlink{mod__int__user_8c_ac5156e64a7488a25059c7118dff3b129}{login\-\_\-screen} (void)
+\item 
+int \hyperlink{mod__int__user_8c_a3cb51c51b88eff8760cd882ca4bd1d19}{get\-\_\-right\-\_\-pass} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+void \hyperlink{mod__int__user_8c_a4632e49a6f6cc1699a95fdd286d9d592}{unknown\-\_\-user} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a4875b7d8b31d818e75e33bb63cb28359}{print\-\_\-new\-\_\-developer\-\_\-registration} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a8e6988f8b9e6dad313bb3782c2e45b5b}{print\-\_\-new\-\_\-product\-\_\-registration} (void)
+\item 
+void \hyperlink{mod__int__user_8c_aae544dad951d88ac5abd4fa189c26389}{print\-\_\-new\-\_\-defect\-\_\-registration} (void)
+\item 
+void \hyperlink{mod__int__user_8c_af8da59913067769ec83bf2e707942e7e}{login\-\_\-successful} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+void \hyperlink{mod__int__user_8c_ab18314d1255fce888d771ca2c7a0e1c8}{print\-\_\-logged\-\_\-menu} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev, int perfil)
+\item 
+void \hyperlink{mod__int__user_8c_a1ce92aa3a0831df2ef357f8aa92e370a}{print\-\_\-common\-\_\-menu} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a6af124af8999f61af0cf01c68369a652}{print\-\_\-project\-\_\-leader\-\_\-menu} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a5280ac1d2777a239db6d0146c944ce0f}{print\-\_\-product\-\_\-leader\-\_\-menu} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a977ac34bc34eacd63fc96fb14148d0fc}{print\-\_\-non\-\_\-leader\-\_\-menu} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a3e8857d5916128ba158a9c6ffb74b772}{print\-\_\-assigned\-\_\-to\-\_\-bug\-\_\-menu} (void)
+\item 
+int \hyperlink{mod__int__user_8c_a7ce4ad94464ecde7bfa165e44098f26b}{load\-\_\-option} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev, size\-\_\-t perfil)
+\item 
+void \hyperlink{mod__int__user_8c_aa58d7a4fa00028db04024803b92d1471}{process\-\_\-option} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev, size\-\_\-t opcao, int perfil)
+\item 
+void \hyperlink{mod__int__user_8c_a7a41a2ce3e72286e0d847dd7c2997978}{load\-\_\-option\-\_\-1} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+void \hyperlink{mod__int__user_8c_a6671be5239509626b89353fba4772eb8}{load\-\_\-option\-\_\-2} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+int \hyperlink{mod__int__user_8c_a748591f15d737b6fea8fc1931adfa82f}{load\-\_\-option\-\_\-3} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+void \hyperlink{mod__int__user_8c_a5e7a760d510999302c887317973d82db}{load\-\_\-option\-\_\-4} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a50d916c73a8c27eac5649be24e1eef1a}{load\-\_\-option\-\_\-5} (void)
+\item 
+void \hyperlink{mod__int__user_8c_acabbd72f99996eb89f047bd7e893f9c1}{load\-\_\-option\-\_\-6} (const struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+void \hyperlink{mod__int__user_8c_a4732a8b80d6e4101e0422e05337d80a1}{load\-\_\-option\-\_\-7} (void)
+\item 
+void \hyperlink{mod__int__user_8c_aac574b5a097dd497e491aa4f862c295c}{load\-\_\-option\-\_\-8} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a3f2813f726f1b9f384291e9138a1e5b4}{load\-\_\-option\-\_\-101} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a86609ff1459b5b450652d4a0d28bcc81}{load\-\_\-option\-\_\-102} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a0eb4192d22b3fefa472654ec31e750a6}{load\-\_\-option\-\_\-103} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a101e8383369634f9e15b5084feefe6b8}{load\-\_\-option\-\_\-104} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a2bdc85cd43e3215ee8f455c26976a01a}{load\-\_\-option\-\_\-201} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a263f9d11d7f67995fc204e43205517cc}{load\-\_\-option\-\_\-202} (void)
+\item 
+void \hyperlink{mod__int__user_8c_ab5b1523a66c84abeb9c223509a947776}{load\-\_\-option\-\_\-301} (void)
+\item 
+void \hyperlink{mod__int__user_8c_a82c0823e5ba212759d560cafbfe6a39b}{load\-\_\-option\-\_\-401} (struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+void \hyperlink{mod__int__user_8c_a0fdc6fd71c6ebe70cdeb34a330dfb8cb}{print\-\_\-developer} (const struct \hyperlink{structdesenvolvedor}{desenvolvedor} $\ast$dev)
+\item 
+void \hyperlink{mod__int__user_8c_a6f035bf1ea98f9500c5e1e40f9918f4b}{print\-\_\-product} (const struct \hyperlink{structproduto}{produto} $\ast$prod)
+\item 
+void \hyperlink{mod__int__user_8c_a39e6647b76e1bb17b1fdd26b784d4014}{print\-\_\-defect} (const struct \hyperlink{structdefeito}{defeito} $\ast$bug)
+\item 
+void \hyperlink{mod__int__user_8c_a03c75a8f86364911f6c0192f07516478}{print\-\_\-error} (int erro)
+\end{DoxyCompactItemize}
+
+
+\subsection{FunÃ§Ãµes}
+\hypertarget{mod__int__user_8c_a3cb51c51b88eff8760cd882ca4bd1d19}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!get\-\_\-right\-\_\-pass@{get\-\_\-right\-\_\-pass}}
+\index{get\-\_\-right\-\_\-pass@{get\-\_\-right\-\_\-pass}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{get\-\_\-right\-\_\-pass}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-right\-\_\-pass (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a3cb51c51b88eff8760cd882ca4bd1d19}
+Função que fica em loop até que a senha digitada pelo usuário seja igual a senha cadastrada no banco de dados. 
+
+DefiniÃ§Ã£o na linha 73 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a7ce4ad94464ecde7bfa165e44098f26b}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option@{load\-\_\-option}}
+\index{load\-\_\-option@{load\-\_\-option}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}int load\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev, }
+\item[{size\-\_\-t}]{perfil}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a7ce4ad94464ecde7bfa165e44098f26b}
+Função que passa a opção escolhida com os dados desenvolvedor, opção e perfil do desenvolvedor. 
+
+DefiniÃ§Ã£o na linha 423 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a7a41a2ce3e72286e0d847dd7c2997978}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-1@{load\-\_\-option\-\_\-1}}
+\index{load\-\_\-option\-\_\-1@{load\-\_\-option\-\_\-1}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a7a41a2ce3e72286e0d847dd7c2997978}
+Opcao 1\-: alterar nome 
+
+DefiniÃ§Ã£o na linha 536 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a3f2813f726f1b9f384291e9138a1e5b4}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-101@{load\-\_\-option\-\_\-101}}
+\index{load\-\_\-option\-\_\-101@{load\-\_\-option\-\_\-101}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-101}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-101 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a3f2813f726f1b9f384291e9138a1e5b4}
+Opcao 101\-: cadastrar novo produto 
+
+DefiniÃ§Ã£o na linha 800 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a86609ff1459b5b450652d4a0d28bcc81}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-102@{load\-\_\-option\-\_\-102}}
+\index{load\-\_\-option\-\_\-102@{load\-\_\-option\-\_\-102}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-102}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-102 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a86609ff1459b5b450652d4a0d28bcc81}
+Opcao 102\-: alterar produto 
+
+DefiniÃ§Ã£o na linha 813 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a0eb4192d22b3fefa472654ec31e750a6}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-103@{load\-\_\-option\-\_\-103}}
+\index{load\-\_\-option\-\_\-103@{load\-\_\-option\-\_\-103}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-103}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-103 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a0eb4192d22b3fefa472654ec31e750a6}
+Opcao 103\-: descontinuar produto 
+
+DefiniÃ§Ã£o na linha 925 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a101e8383369634f9e15b5084feefe6b8}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-104@{load\-\_\-option\-\_\-104}}
+\index{load\-\_\-option\-\_\-104@{load\-\_\-option\-\_\-104}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-104}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-104 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a101e8383369634f9e15b5084feefe6b8}
+Opcao 104\-: designar lider de produto 
+
+DefiniÃ§Ã£o na linha 958 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a6671be5239509626b89353fba4772eb8}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-2@{load\-\_\-option\-\_\-2}}
+\index{load\-\_\-option\-\_\-2@{load\-\_\-option\-\_\-2}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a6671be5239509626b89353fba4772eb8}
+Opcao 2\-: alterar senha 
+
+DefiniÃ§Ã£o na linha 592 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a2bdc85cd43e3215ee8f455c26976a01a}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-201@{load\-\_\-option\-\_\-201}}
+\index{load\-\_\-option\-\_\-201@{load\-\_\-option\-\_\-201}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-201}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-201 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a2bdc85cd43e3215ee8f455c26976a01a}
+Opcao 201\-: indicar desenvolvedor para solucionar defeito 
+
+DefiniÃ§Ã£o na linha 985 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a263f9d11d7f67995fc204e43205517cc}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-202@{load\-\_\-option\-\_\-202}}
+\index{load\-\_\-option\-\_\-202@{load\-\_\-option\-\_\-202}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-202}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-202 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a263f9d11d7f67995fc204e43205517cc}
+Opcao 202\-: alterar estado de defeito 
+
+DefiniÃ§Ã£o na linha 1012 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a748591f15d737b6fea8fc1931adfa82f}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-3@{load\-\_\-option\-\_\-3}}
+\index{load\-\_\-option\-\_\-3@{load\-\_\-option\-\_\-3}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}int load\-\_\-option\-\_\-3 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a748591f15d737b6fea8fc1931adfa82f}
+Opcao 3\-: apagar conta 
+
+DefiniÃ§Ã£o na linha 658 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_ab5b1523a66c84abeb9c223509a947776}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-301@{load\-\_\-option\-\_\-301}}
+\index{load\-\_\-option\-\_\-301@{load\-\_\-option\-\_\-301}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-301}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-301 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_ab5b1523a66c84abeb9c223509a947776}
+Opcao 301\-: alterar estado de defeito 
+
+DefiniÃ§Ã£o na linha 1065 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a5e7a760d510999302c887317973d82db}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-4@{load\-\_\-option\-\_\-4}}
+\index{load\-\_\-option\-\_\-4@{load\-\_\-option\-\_\-4}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-4 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a5e7a760d510999302c887317973d82db}
+Opcao 4\-: cadastrar novo defeito 
+
+DefiniÃ§Ã£o na linha 687 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a82c0823e5ba212759d560cafbfe6a39b}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-401@{load\-\_\-option\-\_\-401}}
+\index{load\-\_\-option\-\_\-401@{load\-\_\-option\-\_\-401}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-401}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-401 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a82c0823e5ba212759d560cafbfe6a39b}
+Opcao 401\-: candidatar-\/se para a solucao de um defeito 
+
+DefiniÃ§Ã£o na linha 1118 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a50d916c73a8c27eac5649be24e1eef1a}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-5@{load\-\_\-option\-\_\-5}}
+\index{load\-\_\-option\-\_\-5@{load\-\_\-option\-\_\-5}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-5}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-5 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a50d916c73a8c27eac5649be24e1eef1a}
+Opcao 5\-: votar em defeito 
+
+DefiniÃ§Ã£o na linha 700 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_acabbd72f99996eb89f047bd7e893f9c1}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-6@{load\-\_\-option\-\_\-6}}
+\index{load\-\_\-option\-\_\-6@{load\-\_\-option\-\_\-6}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-6 (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_acabbd72f99996eb89f047bd7e893f9c1}
+Opção 6\-: Imprimir desenvolvedor 
+
+DefiniÃ§Ã£o na linha 757 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a4732a8b80d6e4101e0422e05337d80a1}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-7@{load\-\_\-option\-\_\-7}}
+\index{load\-\_\-option\-\_\-7@{load\-\_\-option\-\_\-7}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-7}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-7 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a4732a8b80d6e4101e0422e05337d80a1}
+Opção 7\-: Imprimir defeito 
+
+DefiniÃ§Ã£o na linha 768 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_aac574b5a097dd497e491aa4f862c295c}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!load\-\_\-option\-\_\-8@{load\-\_\-option\-\_\-8}}
+\index{load\-\_\-option\-\_\-8@{load\-\_\-option\-\_\-8}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{load\-\_\-option\-\_\-8}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-option\-\_\-8 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_aac574b5a097dd497e491aa4f862c295c}
+Opção 8\-: Imprimir produto 
+
+DefiniÃ§Ã£o na linha 785 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_ac5156e64a7488a25059c7118dff3b129}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!login\-\_\-screen@{login\-\_\-screen}}
+\index{login\-\_\-screen@{login\-\_\-screen}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{login\-\_\-screen}]{\setlength{\rightskip}{0pt plus 5cm}void login\-\_\-screen (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_ac5156e64a7488a25059c7118dff3b129}
+Tela inicial do sistema que solicita identificador e senha do desenvolvedor. 
+
+DefiniÃ§Ã£o na linha 35 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_af8da59913067769ec83bf2e707942e7e}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!login\-\_\-successful@{login\-\_\-successful}}
+\index{login\-\_\-successful@{login\-\_\-successful}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{login\-\_\-successful}]{\setlength{\rightskip}{0pt plus 5cm}void login\-\_\-successful (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_af8da59913067769ec83bf2e707942e7e}
+Função que chama o menu correto dependendo do perfil do desenvolvedor, apos o login. 
+
+DefiniÃ§Ã£o na linha 285 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a840291bc02cba5474a4cb46a9b9566fe}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!main@{main}}
+\index{main@{main}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+DefiniÃ§Ã£o na linha 25 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a3e8857d5916128ba158a9c6ffb74b772}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-assigned\-\_\-to\-\_\-bug\-\_\-menu@{print\-\_\-assigned\-\_\-to\-\_\-bug\-\_\-menu}}
+\index{print\-\_\-assigned\-\_\-to\-\_\-bug\-\_\-menu@{print\-\_\-assigned\-\_\-to\-\_\-bug\-\_\-menu}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-assigned\-\_\-to\-\_\-bug\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-assigned\-\_\-to\-\_\-bug\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a3e8857d5916128ba158a9c6ffb74b772}
+Menu para desenvolvedor que esteja designado para solucionar um defeito 
+
+DefiniÃ§Ã£o na linha 413 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a1ce92aa3a0831df2ef357f8aa92e370a}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-common\-\_\-menu@{print\-\_\-common\-\_\-menu}}
+\index{print\-\_\-common\-\_\-menu@{print\-\_\-common\-\_\-menu}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-common\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-common\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a1ce92aa3a0831df2ef357f8aa92e370a}
+Menu comum a todos desenvolvedores 
+
+DefiniÃ§Ã£o na linha 365 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a39e6647b76e1bb17b1fdd26b784d4014}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-defect@{print\-\_\-defect}}
+\index{print\-\_\-defect@{print\-\_\-defect}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-defect}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-defect (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf defeito} $\ast$}]{bug}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a39e6647b76e1bb17b1fdd26b784d4014}
+Função que imprime na tela os dados do defeito passado 
+
+DefiniÃ§Ã£o na linha 1167 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a0fdc6fd71c6ebe70cdeb34a330dfb8cb}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-developer@{print\-\_\-developer}}
+\index{print\-\_\-developer@{print\-\_\-developer}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-developer}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-developer (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf desenvolvedor} $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a0fdc6fd71c6ebe70cdeb34a330dfb8cb}
+Função que imprime na tela os dados do desenvolvedor passado 
+
+DefiniÃ§Ã£o na linha 1137 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a03c75a8f86364911f6c0192f07516478}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-error@{print\-\_\-error}}
+\index{print\-\_\-error@{print\-\_\-error}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{int}]{erro}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a03c75a8f86364911f6c0192f07516478}
+Função que imprime na tela a mensagem de erro correspondente com o código de erro recebido 
+
+DefiniÃ§Ã£o na linha 1184 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_ab18314d1255fce888d771ca2c7a0e1c8}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-logged\-\_\-menu@{print\-\_\-logged\-\_\-menu}}
+\index{print\-\_\-logged\-\_\-menu@{print\-\_\-logged\-\_\-menu}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-logged\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-logged\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev, }
+\item[{int}]{perfil}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_ab18314d1255fce888d771ca2c7a0e1c8}
+Menu de usuário logado, dependendo do perfil.
+
+1\-: Lider de projeto 2\-: Lider de produto 3\-: Desenvolvedor
+
+Todos\-: -\/\-Alterar nome -\/\-Alterar senha -\/\-Cadastrar defeito -\/\-Votar em defeito -\/\-Apagar conta -\/\-Imprimir desenvolvedor (que está atualmente logado) -\/\-Imprimir produto -\/\-Imprimir defeito
+
+Lider de projeto\-: -\/\-Cadastrar produtos -\/\-Editar produtos -\/\-Indicar lider de produto -\/\-Descontinuar produto -\/\-Escolher responsavel para solucionar defeitos -\/\-Alterar status do defeito (reparado -\/$>$ encerrado ou reparado -\/$>$ confirmado)
+
+Lider de produto\-: -\/\-Escolher responsavel para solucionar defeitos -\/\-Alterar status do defeito (reparado -\/$>$ encerrado ou reparado -\/$>$ confirmado)
+
+Desenvolvedores que nao sejam lideres\-: -\/\-Candidatar para solucionar defeito
+
+Responsavel pelo defeito -\/\-Alterar status do defeito (novo -\/$>$ confirmado -\/$>$ em reparo -\/$>$ reparado) 
+
+DefiniÃ§Ã£o na linha 331 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_aae544dad951d88ac5abd4fa189c26389}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-new\-\_\-defect\-\_\-registration@{print\-\_\-new\-\_\-defect\-\_\-registration}}
+\index{print\-\_\-new\-\_\-defect\-\_\-registration@{print\-\_\-new\-\_\-defect\-\_\-registration}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-new\-\_\-defect\-\_\-registration}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-new\-\_\-defect\-\_\-registration (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_aae544dad951d88ac5abd4fa189c26389}
+Função chamada para registrar um novo defeito. Os dados do defeito são informados pelo usuário. 
+
+DefiniÃ§Ã£o na linha 240 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a4875b7d8b31d818e75e33bb63cb28359}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-new\-\_\-developer\-\_\-registration@{print\-\_\-new\-\_\-developer\-\_\-registration}}
+\index{print\-\_\-new\-\_\-developer\-\_\-registration@{print\-\_\-new\-\_\-developer\-\_\-registration}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-new\-\_\-developer\-\_\-registration}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-new\-\_\-developer\-\_\-registration (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a4875b7d8b31d818e75e33bb63cb28359}
+Função chamada quando se deseja cadastrar um novo usuário. Os dados da struct desenvolvedor serão preenchidos e será verificado se o banco de dados existe ou não, caso não, o primeiro usuário cadastrado será o líder do projeto. 
+
+DefiniÃ§Ã£o na linha 128 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a8e6988f8b9e6dad313bb3782c2e45b5b}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-new\-\_\-product\-\_\-registration@{print\-\_\-new\-\_\-product\-\_\-registration}}
+\index{print\-\_\-new\-\_\-product\-\_\-registration@{print\-\_\-new\-\_\-product\-\_\-registration}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-new\-\_\-product\-\_\-registration}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-new\-\_\-product\-\_\-registration (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a8e6988f8b9e6dad313bb3782c2e45b5b}
+Função chamada para registrar um novo produto. Os dados do produto são informados pelo usuário. 
+
+DefiniÃ§Ã£o na linha 189 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a977ac34bc34eacd63fc96fb14148d0fc}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-non\-\_\-leader\-\_\-menu@{print\-\_\-non\-\_\-leader\-\_\-menu}}
+\index{print\-\_\-non\-\_\-leader\-\_\-menu@{print\-\_\-non\-\_\-leader\-\_\-menu}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-non\-\_\-leader\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-non\-\_\-leader\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a977ac34bc34eacd63fc96fb14148d0fc}
+Menu para desenvolvedor que não seja líder 
+
+DefiniÃ§Ã£o na linha 404 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a6f035bf1ea98f9500c5e1e40f9918f4b}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-product@{print\-\_\-product}}
+\index{print\-\_\-product@{print\-\_\-product}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-product}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-product (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf produto} $\ast$}]{prod}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a6f035bf1ea98f9500c5e1e40f9918f4b}
+Função que imprime na tela os dados do produto passado 
+
+DefiniÃ§Ã£o na linha 1155 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a5280ac1d2777a239db6d0146c944ce0f}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-product\-\_\-leader\-\_\-menu@{print\-\_\-product\-\_\-leader\-\_\-menu}}
+\index{print\-\_\-product\-\_\-leader\-\_\-menu@{print\-\_\-product\-\_\-leader\-\_\-menu}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-product\-\_\-leader\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-product\-\_\-leader\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a5280ac1d2777a239db6d0146c944ce0f}
+Menu para líder de produto 
+
+DefiniÃ§Ã£o na linha 394 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a6af124af8999f61af0cf01c68369a652}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!print\-\_\-project\-\_\-leader\-\_\-menu@{print\-\_\-project\-\_\-leader\-\_\-menu}}
+\index{print\-\_\-project\-\_\-leader\-\_\-menu@{print\-\_\-project\-\_\-leader\-\_\-menu}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{print\-\_\-project\-\_\-leader\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-project\-\_\-leader\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a6af124af8999f61af0cf01c68369a652}
+Menu para líder de projeto 
+
+DefiniÃ§Ã£o na linha 380 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_aa58d7a4fa00028db04024803b92d1471}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!process\-\_\-option@{process\-\_\-option}}
+\index{process\-\_\-option@{process\-\_\-option}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{process\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{struct {\bf desenvolvedor} $\ast$}]{dev, }
+\item[{size\-\_\-t}]{opcao, }
+\item[{int}]{perfil}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_aa58d7a4fa00028db04024803b92d1471}
+Função que irá carregar a opção escolhida de acordo com o perfil do desenvolvedor 
+
+DefiniÃ§Ã£o na linha 441 do arquivo mod\-\_\-int\-\_\-user.\-c.
+
+\hypertarget{mod__int__user_8c_a4632e49a6f6cc1699a95fdd286d9d592}{\index{mod\-\_\-int\-\_\-user.\-c@{mod\-\_\-int\-\_\-user.\-c}!unknown\-\_\-user@{unknown\-\_\-user}}
+\index{unknown\-\_\-user@{unknown\-\_\-user}!mod_int_user.c@{mod\-\_\-int\-\_\-user.\-c}}
+\subsubsection[{unknown\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void unknown\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mod__int__user_8c_a4632e49a6f6cc1699a95fdd286d9d592}
+Função chamada quando o usuário não está no bando de dados. Dá opção de registrar um novo usuário. 
+
+DefiniÃ§Ã£o na linha 97 do arquivo mod\-\_\-int\-\_\-user.\-c.
+

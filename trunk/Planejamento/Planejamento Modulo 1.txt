@@ -1,5 +1,19 @@
+/*
+ *******************************************************************************
+ * Universidade de Brasília
+ * Instituto de Ciências Exatas
+ * Departamento de Ciência da Computação
+ * Matéria: Programação Sistemática
+ * Professor: Fernando Albuquerque
+ * Aluno: Aaron Sue
+ * Matrícula: 13/0020249
+ * Trabalho Prático
+ * Formulário de planejamento do módulo 1
+ *******************************************************************************
+ */
+
  - Identificador do módulo: Módulo 1 - PERSISTÊNCIA DOS DESENVOLVEDORES
  - Tempo estimado para desenvolvimento do módulo: 30 horas
- - Tempo efetivamente gasto no desenvolvimento do módulo:
+ - Tempo efetivamente gasto no desenvolvimento do módulo: 12 horas
  - Tamanho total estimado para o módulo: 2000 linhas
- - Tamanho total efetivo do módulo:
+ - Tamanho total efetivo do módulo: 281 linhas

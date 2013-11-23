@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Trabalho_PS" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="Trabalho_PS" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Unit filename="estruturas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="i_estruturas.h">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="i_mod_log_neg.h">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="i_mod_pers_def.h">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="i_mod_pers_dev.h">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="i_mod_pers_prod.h">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod_int_user.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod_int_user.h">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod_log_neg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod_pers_def.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod_pers_dev.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod_pers_prod.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tabela_codigos.h">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
