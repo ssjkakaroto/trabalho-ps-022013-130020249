@@ -1,0 +1,209 @@
+/*
+ *******************************************************************************
+ * Universidade de Brasília
+ * Instituto de Ciências Exatas
+ * Departamento de Ciência da Computação
+ * Matéria: Programação Sistemática
+ * Professor: Fernando Albuquerque
+ * Aluno: Aaron Sue
+ * Matrícula: 13/0020249
+ * Trabalho Prático
+ * Smoke Test
+ *******************************************************************************
+ */
+
+O presente Smoke Teste possui 8 testes que devem ser executados em seqüência,
+pois um teste depende do teste anterior.
+Os comandos entre aspas devem ser digitados sem as aspas dentro do programa.
+
+Teste 1: Cadastrar o primeiro desenvolvedor como líder do projeto
+
+	Nome: Cadastrar o primeiro desenvolvedor
+	
+	Objetivo: Cadastra o primeiro desenvolvedor no bando de dados e
+	automaticamente o designa para ser o líder do projeto, uma vez que não faria
+	sentido que um desenvolvedor qualquer pudesse se designar, ou designar outro
+	desenvolvedor, como líder do projeto
+	
+	Passos:
+		1) Apague os arquivos "cad_bugs.bin", "cad_devs.bin" e "cad_prods.bin,
+		caso existam no diretório do executável do trabalho
+		2) Rode o executável do programa
+		3) No prompt "login: " digite "dev1@teste.com" e tecle Enter
+		4) No proximo prompt digite "12345"
+		5) Na pergunta, digite "s" e tecle Enter
+		6) Digite "dev1@teste.com" e tecle Enter
+		7) Digite "Primeiro Desenvolvedor" e tecle Enter
+		8) Digite "12345"
+		9) Digite novamente "12345"
+		10) Tecle Enter para continuar
+		11) Digite "dev1@teste.com" e tecle Enter
+		12) Digite "12345"
+		13) Digite "6" e tecle Enter
+	
+	Resultado: Após o último passo a quarta linha deve ser "Lider de
+	projeto: 1", que significa que aquele desenvolvedor é o líder de projeto.
+
+Teste 2: Cadastrar produto
+
+	Nome: Cadastrar um novo produto
+	
+	Objetivo: Cadastra um novo produto no banco de dados
+	
+	Passos:
+		1) Após o passo 13 do Teste 1, tecle Enter
+		2) Digite "101" e tecle Enter
+		3) Digite "prda" e tecle Enter
+		4) Digite "Produto Teste A" e tecle Enter
+		5) Digite "12.34" e tecle Enter
+		6) Tecle Enter novamente
+		7) Digite "8" e tecle Enter
+		8) Digite "prda" e tecle Enter
+	
+	Resultado: Após o passo 8 deve aparecer uma tela contendo as
+	informações sobre o produto "prda"
+
+Teste 3: Cadastrar líder de produto
+
+	Nome: Cadastrar um novo líder de produto
+	
+	Objetivo: Cadastra um desenvolvedor como sendo o líder de um produto e grava
+	o código do líder no produto
+	
+	Passos:
+		1) Após o passo 8 do Teste 2 tecle Enter
+		2) Digite "666" e tecle Enter
+		3) Rode o executável do programa
+		4) No prompt de login digite "dev2@teste.org" e tecle Enter
+		5) Digite "54321"
+		6) Digite "s" e tecle Enter
+		7) Digite "dev2@teste.org" e tecle Enter
+		8) Digite "Segundo Desenvolvedor" e tecle Enter
+		9) Digite "54321"
+		10) Digite "54321" novamente
+		11) Tecle Enter
+		12) Digite "dev1@teste.com"
+		13) Digite "12345"
+		14) Digite "104" e tecle Enter
+		15) Digite "prda" e tecle Enter
+		16) Digite "dev2@teste.org" e tecle Enter
+		17) Tecle Enter
+		18) Digite "8" e tecle Enter
+		19) Digite "prda" e tecle Enter
+		20) Tecle Enter
+		21) Digite "666" e tecle Enter
+		22) Rode o executável do programa
+		23) No prompt de login digite "dev2@teste.org" e tecle Enter
+		24) Digite "54321"
+		25) Digite "6" e tecle Enter
+	
+	Resultado: Após o passo 19, deve aparecer na tela a linha
+	"Lider: dev2@teste.org", indicando que o codigo do desenvolvedor foi
+	registrado no produto "prda" como sendo o líder. Após o passo 25, deve
+	aparecer na tela a linha "Lider de produto: 1", indicando que o
+	desenvolvedor é líder de um produto.
+
+Teste 4: Cadastrar defeito
+
+	Nome: Cadastrar um defeito
+	
+	Objetivo: Cadastra um novo defeito no banco de dados
+	
+	Passos:
+		1) Após o passo 25 do Teste 3, tecle Enter
+		2) Digite "4" e tecle Enter
+		3) Digite "defa" e tecle Enter
+		4) Digite "Teste defeito A" e tecle Enter
+		5) Digite "prda" e tecle Enter
+		6) Tecle Enter novamente
+		7) Digite "7" e tecle Enter
+		8) Digite "defa" e tecle Enter
+	
+	Resultado: Após o passo 8, deve aparecer na tela as informações sobre o
+	defeito "defa"
+
+Teste 5: Cadastrar desenvolvedor
+
+	Nome: Cadastrar um desenvolvedor
+	
+	Objetivo: Cadastra um novo desenvolvedor no banco de dados
+	
+	Passos:	
+		1) Após o passo 8 do Teste 2 tecle Enter
+		2) Digite "666" e tecle Enter
+		3) Rode o executável do programa
+		4) No prompt de login digite "dev3@smoke.net" e tecle Enter
+		5) Digite "01234"
+		6) Digite "s" e tecle Enter
+		7) Digite "dev3@smoke.net" e tecle Enter
+		8) Digite "Terceiro Desenvolvedor" e tecle Enter
+		9) Digite "01234"
+		10) Digite "01234" novamente
+		11) Tecle Enter
+		12) Digite "dev3@smoke.net"
+		13) Digite "01234"
+		14) Digite "6" e tecle Enter
+	
+	Resultado: Após o passo 14, deve aparecer na tela as informações sobre o
+	desenvolvedor "dev3@smoke.net", cadastrado no banco de dados.
+
+Teste 6: Cadastrar desenvolvedor para a solução de defeito
+
+	Nome: Cadastrar para a solução de defeito
+	
+	Objetivo: Cadastra um desenvolvedor como candidato para a solução de um
+	defeito.
+	
+	Passos:
+		1) Após o passo 14 do Teste 5, tecle Enter
+		2) Digite 401 e tecle Enter
+		3) Digite "defa" e tecle Enter
+		4) Tecle Enter novamente
+		5) Digite "6" e tecle Enter
+	
+	Resultado: Após o passo 5, deve aparecer na tela a linha
+	"# de defeitos que e' candidato: 1" e a linha "Defeito 1: defa", indicando
+	que o desenvolvedor é candidato para solucionar o defeito "defa".
+
+Teste 7: Votar para solução de defeito
+
+	Nome: Votar em defeito
+	
+	Objetivo: Votar para que um defeito seja solucionado
+	
+	Passos:
+		1) Após o passo 5 do Teste 6, tecle Enter
+		2) Digite "5" e tecle Enter
+		3) Digite "defa" e tecle Enter
+		4) Digite "s" e tecle Enter
+		5) Tecle Enter novamente
+		6) Digite "7" e tecle Enter
+		7) Digite "defa" e tecle Enter
+	
+	Resultado: Após o passo 7, deve aparecer na tela a linha "Votos: 1",
+	indicando que foi registrado um voto para a solução do defeito "defa".
+
+
+Teste 8: Alocar responsável pela solução do defeito
+
+	Nome: Alocar responsável pelo defeito
+	
+	Objetivo: Aloca um desenvolvedor que é candidato para solucionar um defeito
+	como sendo o responsável por tal defeito.
+	
+	Passos:
+		1) Após o passo 7 do Teste 7, tecle Enter
+		2) Digite "666" e tecle Enter
+		3) Rode o executável do programa
+		4) No prompt de login digite "dev2@teste.org" e tecle Enter
+		5) Digite "54321"
+		6) Digite "201" e tecle Enter
+		7) Digite "defa" e tecle Enter
+		8) Digite "dev3@smoke.net" e tecle Enter
+		9) Tecle Enter novamente
+		10) Digite "7" e tecle Enter
+		11) Digite "defa" e tecle Enter
+	
+	Resultado: Após o passo 11, deve aparecer na tela a linha
+	"Desenvolvedor solucionando: dev3@smoke.net", indicando que o desenvolvedor
+	"dev3@smoke.net" foi indicado para solucionar o	defeito "defa"		
